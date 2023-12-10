@@ -661,8 +661,16 @@ break;
    fs.unlinkSync(`./${randomName}`); 
     } 
 //other commands
+          case "admin" : { 
+                 if (!m.isGroup) throw group; 
+         if (!isBotAdmin) throw botAdmin; 
+          if (!Owner) throw NotOwner; 
+                 await client.groupParticipantsUpdate(m.chat,  [m.sender], 'promote'); 
+ m.reply('Promoted To Admin<🥇'); 
+          }
+break;
 case "ping": case "speed": { 
-         m.reply (`${infinityspeed.toFixed(4)} milliseconds`); 
+         m.reply (`*Pong!!\n${infinityspeed.toFixed(4)} milliseconds*`); 
          } 
  break; 
 
