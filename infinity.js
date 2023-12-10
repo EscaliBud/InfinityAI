@@ -78,6 +78,9 @@ const runtime = function (seconds) {
     const color = (text, color) => {
       return !color ? chalk.green(text) : chalk.keyword(color)(text);
     };
+const dev = process.env.DEV || '254798242085'
+ const devkresswell = dev.split(",");
+    const Owner = devkresswell.map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(m.sender)
 
     // Group
     const groupMetadata = m.isGroup ? await client.groupMetadata(m.chat).catch((e) => {}) : "";
