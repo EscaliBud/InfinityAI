@@ -12,7 +12,7 @@ const ytdl = require("ytdl-core");
  const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oNa9-hsrLxQV5l5FiAZO"); // Scrapes if no key is provided
 //const openai = new OpenAI({ apiKey: setting.keyopenai });
 const { Configuration, OpenAIApi } = require("openai");
-const { cmd, commands } = require(__dirname + '/commands');
+
 
 module.exports = infinity = async (client, m, chatUpdate) => {
   try {
