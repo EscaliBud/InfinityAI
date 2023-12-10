@@ -649,6 +649,51 @@ case "alive": {
  }
 break;
 
+//group commands
+
+          case "promote" : { 
+                 if (!m.isGroup) throw group; 
+         if (!isBotAdmin) throw botAdmin; 
+         if (!isAdmin) throw admin; 
+ if (!m.quoted) throw `Tag someone with the command!`; 
+                 let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net']; 
+
+                 await client.groupParticipantsUpdate(m.chat, users, 'promote'); 
+ m.reply('Promoted successfully🍷'); 
+         } 
+ break; 
+ case "demote": { 
+                 if (!m.isGroup) throw group; 
+         if (!isBotAdmin) throw botAdmin; 
+         if (!isAdmin) throw admin; 
+ if (!m.quoted) throw `Tag someone with the command!`; 
+                 let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net']; 
+
+                 await client.groupParticipantsUpdate(m.chat, users, 'demote'); 
+ m.reply('Demoted Successfully🗿'); 
+         } 
+ break;
+ case "close": case "mute": { 
+
+                 if (!m.isGroup) throw group; 
+                 if (!isBotAdmin) throw botAdmin; 
+                 if (!isAdmin) throw admin; 
+
+                     await client.groupSettingUpdate(m.chat, 'announcement'); 
+ m.reply('Group Closed successfully🍷!'); 
+ } 
+ break; 
+ case "open": case "unmute": { 
+                 if (!m.isGroup) throw group; 
+                 if (!isBotAdmin) throw botAdmin; 
+                 if (!isAdmin) throw admin; 
+
+                     await client.groupSettingUpdate(m.chat, 'not_announcement'); 
+ m.reply('Group Opened successfully🍷!'); 
+
+ }
+        break;
+
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break
