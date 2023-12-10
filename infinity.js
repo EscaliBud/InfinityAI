@@ -90,8 +90,8 @@ Get the source code for this Bot`)
         case "ai": case "openai": case "chatgpt": case "ask":
           try {
             // tidak perlu diisi apikeynya disini, karena sudah diisi di file key.json
-            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
-            if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`);
+            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey not set\n\nSet your api on key.json and restart bot\n\nGet your API key from this website: https://beta.openai.com/account/api-keys");
+            if (!text) return reply(`Chat with AI.\n\nContoh:\n${prefix}${command} Write hello world in java.`);
             const chatCompletion = await openai.chat.completions.create({
               messages: [{ role: 'user', content: q }],
               model: 'gpt-3.5-turbo'
@@ -104,7 +104,7 @@ Get the source code for this Bot`)
             console.log(error.response.data);
           } else {
             console.log(error);
-            m.reply("Maaf, sepertinya ada yang error :"+ error.message);
+            m.reply("Sorry,There seems to be an error error :"+ error.message);
           }
         }
           break;
