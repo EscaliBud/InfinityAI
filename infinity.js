@@ -146,6 +146,14 @@ if (autobio === 'TRUE'){
 *┃➥ Creator : Kresswell*
 *┗━──────────────*
 
+*⌜ Owner Commands ⌟*
+
+*┏━───────────────╮*
+*┃➥Block*
+*┃➥Unblock*
+*┃➥Join*
+*┗━───────────────╯*
+
 *⌜ Admin Commands ⌟*
 
 *┏━───────────────╮*
