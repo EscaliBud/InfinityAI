@@ -40,6 +40,7 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
     const command = body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase();
     const args = body.trim().split(/ +/).slice(1);
     const pushname = m.pushName || "No Name";
+const autobio = process.env.AUTOBIO || 'TRUE';
     const botNumber = await client.decodeJid(client.user.id);
     const itsMe = m.sender == botNumber ? true : false;
     let text = (q = args.join(" "));
