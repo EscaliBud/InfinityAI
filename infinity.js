@@ -58,6 +58,7 @@ const wapresence = process.env.WA_PRESENCE || 'recording';
     const autoread = process.env.AUTOREAD || 'TRUE';
 const autobio = process.env.AUTOBIO || 'TRUE';
 const antilinkall = process.env.ANTILINK_ALL || 'TRUE';
+const antilink = process.env.ANTILINK || 'TRUE';
     const botNumber = await client.decodeJid(client.user.id);
     const itsMe = m.sender == botNumber ? true : false;
     let text = (q = args.join(" "));
