@@ -46,6 +46,7 @@ const autobio = process.env.AUTOBIO || 'TRUE';
     let text = (q = args.join(" "));
     const arg = budy.trim().substring(budy.indexOf(" ") + 1);
     const arg1 = arg.trim().substring(arg.indexOf(" ") + 1);
+const { cmd, commands } = require(__dirname + '/lib/commands')
 
     const from = m.chat;
     const reply = m.reply;
