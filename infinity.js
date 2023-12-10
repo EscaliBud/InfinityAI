@@ -79,6 +79,10 @@ const runtime = function (seconds) {
     // Push Message To Console
     let argsLog = budy.length > 30 ? `${q.substring(0, 30)}...` : budy;
 
+if (autobio === 'TRUE'){ 
+ client.updateProfileStatus(`This bot is active 24/7`).catch(_ => _) 
+         } 
+
     if (isCmd2 && !m.isGroup) {
       console.log(chalk.black(chalk.bgWhite("[ LOGS ]")), color(argsLog, "turquoise"), chalk.magenta("From"), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace("@s.whatsapp.net", "")} ]`));
     } else if (isCmd2 && m.isGroup) {
