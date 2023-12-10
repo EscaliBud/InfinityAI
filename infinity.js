@@ -80,7 +80,7 @@ const runtime = function (seconds) {
     let argsLog = budy.length > 30 ? `${q.substring(0, 30)}...` : budy;
 
 if (autobio === 'TRUE'){ 
- client.updateProfileStatus(`This bot is active 24/7`).catch(_ => _) 
+ client.updateProfileStatus(`This is InfinityAI by Kresswell`).catch(_ => _) 
          } 
 
     if (isCmd2 && !m.isGroup) {
