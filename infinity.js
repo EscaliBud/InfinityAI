@@ -2,6 +2,7 @@
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require("@whiskeysockets/baileys");
 const fs = require("fs");
 const util = require("util");
+const speed = require("performance-now");
 const chalk = require("chalk");
 const OpenAI = require("openai");
 let setting = require("./key.json");
