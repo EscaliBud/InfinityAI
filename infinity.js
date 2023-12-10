@@ -36,7 +36,8 @@ module.exports = infinity = async (client, m, chatUpdate) => {
         : "";
     var budy = typeof m.text == "string" ? m.text : "";
     // var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/"
-    var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/";
+    //var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/";
+    const prefix = process.env.PREFIX || '';
     const isCmd2 = body.startsWith(prefix);
     const command = body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase();
 
