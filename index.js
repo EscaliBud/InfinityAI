@@ -124,7 +124,7 @@ function smsg(conn, m, store) {
 }
 
 async function startHisoka() {
-  const { state, saveCreds } = await useMultiFileAuthState(`./${sessionName ? sessionName : "session"}`);
+  const { state, saveCreds } = await useMultiFileAuthState(`./${sessionName ? sessionName : "infinityAI"}`);
   const { version, isLatest } = await fetchLatestWaWebVersion().catch(() => fetchLatestBaileysVersion());
   console.log(`using WA v${version.join(".")}, isLatest: ${isLatest}`);
   console.log(
@@ -158,7 +158,7 @@ async function startHisoka() {
       if (!client.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
       if (mek.key.id.startsWith("BAE5") && mek.key.id.length === 16) return;
       m = smsg(client, mek, store);
-      require("./sansekai")(client, m, chatUpdate, store);
+      require("./infinity")(client, m, chatUpdate, store);
     } catch (err) {
       console.log(err);
     }
