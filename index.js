@@ -129,7 +129,7 @@ async function startHisoka() {
   console.log(`using WA v${version.join(".")}, isLatest: ${isLatest}`);
   console.log(
     color(
-      figlet.textSync("Wa-OpenAI", {
+      figlet.textSync("InfinityAI", {
         font: "Standard",
         horizontalLayout: "default",
         vertivalLayout: "default",
