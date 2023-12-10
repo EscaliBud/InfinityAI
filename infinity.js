@@ -90,8 +90,8 @@ Get the source code for this Bot`)
         case "ai": case "openai": case "chatgpt": case "ask":
           try {
             // tidak perlu diisi apikeynya disini, karena sudah diisi di file key.json
-            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey not set\n\nSet your api on key.json and restart bot\n\nGet your API key from this website: https://beta.openai.com/account/api-keys");
-            if (!text) return reply(`Chat with AI.\n\nContoh:\n${prefix}${command} Write hello world in java.`);
+            if (setting.keyopenai === "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") return reply("Apikey not set\n\nSet your api on key.json and restart bot\n\nGet your API key from this website: https://beta.openai.com/account/api-keys");
+            if (!text) return reply(`Chat with AI.\n\nExample:\n${prefix}${command} Write hello world in java.`);
             const chatCompletion = await openai.chat.completions.create({
               messages: [{ role: 'user', content: q }],
               model: 'gpt-3.5-turbo'
@@ -111,8 +111,8 @@ Get the source code for this Bot`)
         case "img": case "ai-img": case "image": case "images": case "dall-e": case "dalle":
           try {
             // tidak perlu diisi apikeynya disini, karena sudah diisi di file key.json
-            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey not set.\n Please set up your key on key.json and restart bot.\n\nYou can get API keys from: https://beta.openai.com/account/api-keys");
-            if (!text) return reply(`Membuat gambar dari AI.\n\nContoh:\n${prefix}${command} Wooden house on snow mountain`);
+            if (setting.keyopenai === "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") return reply("Apikey not set.\n Please set up your key on key.json and restart bot.\n\nYou can get API keys from: https://beta.openai.com/account/api-keys");
+            if (!text) return reply(`Create Images With AI.\n\nExample:\n${prefix}${command} Wooden house on snow mountain`);
             const image = await openai.images.generate({ 
               model: "dall-e-3",
               prompt: q, 
@@ -142,10 +142,10 @@ Get the source code for this Bot`)
             if (!budy.toLowerCase()) return;
             if (argsLog || (isCmd2 && !m.isGroup)) {
               // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
-              console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("tidak tersedia", "turquoise"));
+              console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("not available", "turquoise"));
             } else if (argsLog || (isCmd2 && m.isGroup)) {
               // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
-              console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("tidak tersedia", "turquoise"));
+              console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("Not available", "turquoise"));
             }
           }
         }
