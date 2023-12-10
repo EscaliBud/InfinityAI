@@ -196,6 +196,301 @@ case 'play':
         }
     }
 break;
+case 'ytsearch':
+    case 'yts': {
+        if (!text) {
+            reply('Provide a search term!\E.g: Alan walker alone')
+            return;
+        }
+        const term = text;
+        const {
+            videos
+        } = await yts(term);
+        if (!videos || videos.length <= 0) {
+            reply(`No Matching videos found for : *${term}*!!`)
+            return;
+        }
+        const length = videos.length < 10 ? videos.length : 10;
+        let tex = `YouTube Search\n🔍 Query ~> ${term}\n\n`;
+        for (let i = 0; i < length; i++) {
+            tex += `Link ~> ${videos[i].url}\nChannel ~> ${videos[i].author.name}\nTitle ~> ${videos[i].title}\n\n`;
+        }
+        reply(tex)
+        return;
+    }
+    break;
+
+case 'ytmp3':
+case 'yta': {
+      const getRandommmm = (ext) => {
+            return `${Math.floor(Math.random() * 10000)}${ext}`;
+        };
+        if (args.length === 0) {
+            reply(`URL is empty! \nSend ${prefix}ytmp3 url`);
+            return;
+        }
+        try {
+            let urlYt = args[0];
+            if (!urlYt.startsWith("http")) {
+                reply(`Youtube link?`);
+                return;
+            }
+            let infoYt = await ytdl.getInfo(urlYt);
+            //30 MIN
+            if (infoYt.videoDetails.lengthSeconds >= 1800) {
+                reply(`Video too big!`);
+                return;
+            }
+            let titleYt = infoYt.videoDetails.title;
+            let randomName = getRandommmm(".mp3");
+            const stream = ytdl(urlYt, {
+                    filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
+                })
+                .pipe(fs.createWriteStream(`./${randomName}`));
+            console.log("Audio downloading ->", urlYt);
+            // reply("Downloading.. This may take upto 5 min!");
+            await new Promise((resolve, reject) => {
+                stream.on("error", reject);
+                stream.on("finish", resolve);
+            });
+
+            let stats = fs.statSync(`./${randomName}`);
+            let fileSizeInBytes = stats.size;
+            // Convert the file size to megabytes (optional)
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            console.log("Audio downloaded ! Size: " + fileSizeInMegabytes);
+            if (fileSizeInMegabytes <= 40) {
+                //sendFile(from, fs.readFileSync(`./${randomName}`), msg, { audio: true, jpegThumbnail: (await getBuffer(dl.meta.image)).buffer, unlink: true })
+                await client.sendMessage(
+                    from, {
+                        document: fs.readFileSync(`./${randomName}`),
+                        mimetype: "audio/mpeg",
+                        fileName: titleYt + ".mp3",
+                    }, {
+                        quoted: m
+                    }
+                );
+            } else {
+                reply(`File size bigger than 40mb.`);
+            }
+            fs.unlinkSync(`./${randomName}`);
+        } catch (e) {
+            reply(e.toString())
+        }
+    }
+
+break  
+case 'ytmp4':
+case 'ytvideo':
+case 'ytv':
+        const getRandommm = (ext) => {
+            return `${Math.floor(Math.random() * 10000)}${ext}`;
+        };
+        if (args.length === 0) {
+            reply(` URL is empty! \nSend ${prefix}ytmp4 url`);
+            return;
+        }
+        try {
+            let urlYt = args[0];
+            if (!urlYt.startsWith("http")) {
+                reply(`Give youtube link!`);
+                return;
+            }
+            let infoYt = await ytdl.getInfo(urlYt);
+            //30 MIN
+            if (infoYt.videoDetails.lengthSeconds >= 1800) {
+                reply(`Video file too big!`);
+                return;
+            }
+            let titleYt = infoYt.videoDetails.title;
+            let randomName = getRandommm(".mp4");
+
+            const stream = ytdl(urlYt, {
+                    filter: (info) => info.itag == 22 || info.itag == 18,
+                })
+                .pipe(fs.createWriteStream(`./${randomName}`));
+            //22 - 1080p/720p and 18 - 360p
+            console.log("Video downloading ->", urlYt);
+            // reply("Downloading.. This may take upto 5 min!");
+            await new Promise((resolve, reject) => {
+                stream.on("error", reject);
+                stream.on("finish", resolve);
+            });
+
+            let stats = fs.statSync(`./${randomName}`);
+            let fileSizeInBytes = stats.size;
+            // Convert the file size to megabytes (optional)
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            console.log("Video downloaded ! Size: " + fileSizeInMegabytes);
+            if (fileSizeInMegabytes <= 100) {
+                client.sendMessage(
+                    from, {
+                        video: fs.readFileSync(`./${randomName}`),
+                        caption: `${titleYt}`,
+                    }, {
+                        quoted: m
+                    }
+                );
+            } else {
+                reply(`File size big.`);
+            }
+
+            fs.unlinkSync(`./${randomName}`);
+        } catch (e) {
+            reply(e.toString())
+        }
+break;
+
+  case 'video':
+        const getRandomm = (ext) => {
+            return `${Math.floor(Math.random() * 10000)}${ext}`;
+        };
+        if (args.length === 0) {
+            reply(` URL is empty! \nSend ${prefix}ytmp4 url`);
+            return;
+        }
+        try {
+            let urlYt = args[0];
+
+
+            let infoYt = await ytdl.getInfo(urlYt);
+            //30 MIN
+            if (infoYt.videoDetails.lengthSeconds >= 1800) {
+                reply(`Video file too big!`);
+                return;
+            }
+            let titleYt = infoYt.videoDetails.title;
+            let randomName = getRandomm(".mp4");
+
+            const stream = ytdl(urlYt, {
+                    filter: (info) => info.itag == 22 || info.itag == 18,
+                })
+                .pipe(fs.createWriteStream(`./${randomName}`));
+            //22 - 1080p/720p and 18 - 360p
+            console.log("Video downloading ->", urlYt);
+            // reply("Downloading.. This may take upto 5 min!");
+            await new Promise((resolve, reject) => {
+                stream.on("error", reject);
+                stream.on("finish", resolve);
+            });
+
+            let stats = fs.statSync(`./${randomName}`);
+            let fileSizeInBytes = stats.size;
+            // Convert the file size to megabytes (optional)
+            let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+            console.log("Video downloaded ! Size: " + fileSizeInMegabytes);
+            if (fileSizeInMegabytes <= 100) {
+                client.sendMessage(
+                    from, {
+                        video: fs.readFileSync(`./${randomName}`),
+                        caption: `${titleYt}`,
+                    }, {
+                        quoted: m
+                    }
+                );
+            } else {
+                reply(`File size big.`);
+            }
+
+            fs.unlinkSync(`./${randomName}`);
+        } catch (e) {
+            reply(e.toString())
+        }
+break;
+
+          case "song": { 
+ const getRandom = (ext) => { 
+   return `${Math.floor(Math.random() * 10000)}${ext}`; 
+ }; 
+
+ const downloadSong = async (randomName, query) => { 
+   try { 
+     const INFO_URL = "https://slider.kz/vk_auth.php?q="; 
+     const DOWNLOAD_URL = "https://slider.kz/download/"; 
+     let { data } = await axios.get(INFO_URL + query); 
+
+     if (data["audios"][""].length <= 1) { 
+       console.log("==[ SONG NOT FOUND! ]=="); 
+       return { info: "NF" }; 
+     } 
+
+
+     let i = 0; 
+     let track = data["audios"][""][i]; 
+     while (/remix|revisited|mix/i.test(track.tit_art)) { 
+       i += 1; 
+       track = data["audios"][""][i]; 
+     } 
+     //if reach the end then select the first song 
+     if (!track) { 
+       track = data["audios"][""][0]; 
+     } 
+
+
+     let link = track.url; 
+     link = encodeURI(link); //to replace unescaped characters from link 
+
+     let songName = track.tit_art; 
+     songName = 
+       songName = 
+       songName = 
+         songName.replace(/\?|<|>|\*|"|:|\||\/|\\/g, ""); //removing special characters which are not allowed in file name 
+     // console.log(link); 
+     // download(songName, link); 
+     const res = await axios({ 
+       method: "GET", 
+       url: link, 
+       responseType: "stream", 
+     }); 
+     data = res.data; 
+     const path = `./${randomName}`; 
+     const writer = fs.createWriteStream(path); 
+     data.pipe(writer); 
+     return new Promise((resolve, reject) => { 
+       writer.on("finish", () => resolve(songName)); 
+       writer.on("error", () => reject); 
+     }); 
+   } catch (err) { 
+     console.log(err); 
+     return { info: "ERR", err: err.stack }; 
+   } 
+ }; 
+
+ //const handler = async (client, msg, msgInfoObj) => { 
+   //let { prefix, reply, args, from } = msgInfoObj; 
+
+   if (args.length === 0) { 
+     await reply(`Give me a song name?`); 
+     return; 
+   } 
+   let randomName = getRandom(".mp3"); 
+   let query = args.join("%20"); 
+   let response = await downloadSong(randomName, query); 
+   if (response && response.info == "NF") { 
+     await reply( 
+       `Not found!` 
+     ); 
+     return; 
+   } 
+   if (response && response.info === "ERR") { 
+     await reply(response.err); 
+     return; 
+   } 
+   console.log(`song saved-> ./${randomName}`, response); 
+
+   await client.sendMessage( 
+     from, 
+     { 
+       document: fs.readFileSync(`./${randomName}`), 
+       fileName: response + ".mp3", 
+       mimetype: "audio/mpeg", 
+       mediaUploadTimeoutMs: 1000 * 30, 
+     }, 
+     { quoted: m } 
+   ); 
+   fs.unlinkSync(`./${randomName}`); 
+    } 
+
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break
