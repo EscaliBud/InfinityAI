@@ -52,6 +52,12 @@ const autobio = process.env.AUTOBIO || 'TRUE';
     const sender = m.sender;
     const mek = chatUpdate.messages[0];
     const getGroupAdmins = (participants) => { 
+       let admins = []; 
+       for (let i of participants) { 
+         i.admin === "superadmin" ? admins.push(i.id) : i.admin === "admin" ? admins.push(i.id) : ""; 
+       } 
+       return admins || []; 
+     };
 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 
