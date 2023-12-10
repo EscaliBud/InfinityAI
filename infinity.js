@@ -39,6 +39,11 @@ module.exports = infinity = async (client, m, chatUpdate) => {
     var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/";
     const isCmd2 = body.startsWith(prefix);
     const command = body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase();
+
+const Heroku = require("heroku-client");  
+ const appname = process.env.APP_NAME || '';
+ const herokuapi = process.env.HEROKU_API;
+
     const args = body.trim().split(/ +/).slice(1);
     const pushname = m.pushName || "No Name";
 const autobio = process.env.AUTOBIO || 'TRUE';
