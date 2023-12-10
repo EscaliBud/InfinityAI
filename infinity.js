@@ -44,6 +44,8 @@ module.exports = infinity = async (client, m, chatUpdate) => {
 const Heroku = require("heroku-client");  
  const appname = process.env.APP_NAME || '';
  const herokuapi = process.env.HEROKU_API;
+    const mime = (quoted.msg || quoted).mimetype || "";
+            const qmsg = (quoted.msg || quoted);
     const author = process.env.STICKER_AUTHOR || 'Kresswell';
     const packname = process.env.STICKER_PACKNAME || 'Kresswell';
 
