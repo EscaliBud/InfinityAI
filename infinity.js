@@ -162,6 +162,7 @@ if (autobio === 'TRUE'){
 *┃➥Ping*
 *┃➥Runtime*
 *┃➥Speed*
+*┃➥Link*
 *┗━───────────────╯*
 
 *⌜ Downloader & Media ⌟*
