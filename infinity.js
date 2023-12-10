@@ -679,6 +679,14 @@ break;
 
 //group commands
 
+          case "invite": case "link": { 
+                 if (!m.isGroup) throw group; 
+                 if (!isBotAdmin) throw botAdmin; 
+                 let response = await client.groupInviteCode(m.chat); 
+                 client.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nLink For ${groupMetadata.subject} .Enjoy your Stay here!!`, m, { detectLink: true }); 
+             } 
+ break;
+
           case "promote" : { 
                  if (!m.isGroup) throw group; 
          if (!isBotAdmin) throw botAdmin; 
