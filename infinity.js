@@ -148,6 +148,7 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
           }
         }
           break;
+//download commands
 case 'play':
     case 'stream': {
         if (!text) {
@@ -504,6 +505,22 @@ break;
    ); 
    fs.unlinkSync(`./${randomName}`); 
     } 
+//other commands
+case "ping": case "speed": { 
+         m.reply (`${dreadedspeed.toFixed(4)} milliseconds`); 
+         } 
+ break; 
+
+ case "runtime": { 
+                 m.reply (`Bot active for ${runtime(process.uptime())}`) 
+ } 
+ break;
+
+case "alive": { 
+
+ client.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/d6dab955fbaa42fce2280.jpg' }, caption: `Hello ${m.pushName}, Dreaded is active\n\nActive for:  ${runtime(process.uptime())}\n\nType ${prefix}help.\n\nYou can also interact with our online chatbot built with html and JavaScript with API integration.\n\nLink is given below:\n\nhttps://quantumlab.ru.eu.org/`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
+ }
+break;
 
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
