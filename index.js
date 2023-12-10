@@ -23,6 +23,7 @@ const _ = require("lodash");
 const PhoneNumber = require("awesome-phonenumber");
 
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
+const { cmd, commands } = require(__dirname + '/lib/commands');
 
 const color = (text, color) => {
   return !color ? chalk.green(text) : chalk.keyword(color)(text);
