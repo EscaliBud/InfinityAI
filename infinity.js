@@ -104,6 +104,15 @@ const runtime = function (seconds) {
 *┃➥ Creator : Kresswell*
 *┗━──────────────*
 
+*⌜ Utilities ⌟*
+
+*┏━───────────────╮*
+*┃➥Alive*
+*┃➥Ping*
+*┃➥Runtime*
+*┃➥Speed*
+*┗━───────────────╯*
+
 *⌜ Downloader & Media ⌟*
 
 *┏━───────────────╮*
@@ -535,7 +544,7 @@ case "ping": case "speed": {
 
 case "alive": { 
 
- client.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/d6dab955fbaa42fce2280.jpg' }, caption: `Hello ${m.pushName}, InfinityAI is active\n\nActive for:  ${runtime(process.uptime())}\n\nType ${prefix}help.\n\nYou can also interact with our online chatbot built with html and JavaScript with API integration.\n\nLink is given below:\n\nhttps://quantumlab.ru.eu.org/`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
+ client.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/d6dab955fbaa42fce2280.jpg' }, caption: `Hello ${m.pushName}, InfinityAI is active\n\nActive for:  ${runtime(process.uptime())}\n\nType ${prefix}help.`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
 
