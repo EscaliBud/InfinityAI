@@ -133,7 +133,7 @@ Get the source code for this Bot`)
         }
           break;
           case "sc": case "script": case "scbot":
-           m.reply("Bot ini menggunakan script dari https://github.com/Sansekai/Wa-OpenAI");
+           m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break
         default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
