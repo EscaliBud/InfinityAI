@@ -6,6 +6,7 @@ const chalk = require("chalk");
 const OpenAI = require("openai");
 let setting = require("./key.json");
 const yts = require("yt-search");
+const ytdl = require("ytdl-core");
 const openai = new OpenAI({ apiKey: setting.keyopenai });
 
 module.exports = sansekai = async (client, m, chatUpdate) => {
