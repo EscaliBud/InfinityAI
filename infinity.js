@@ -13,7 +13,7 @@ const ytdl = require("ytdl-core");
 //const openai = new OpenAI({ apiKey: setting.keyopenai });
 const { Configuration, OpenAIApi } = require("openai");
 
-module.exports = sansekai = async (client, m, chatUpdate) => {
+module.exports = infinity = async (client, m, chatUpdate) => {
   try {
     var body =
       m.mtype === "conversation"
