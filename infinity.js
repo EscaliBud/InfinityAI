@@ -44,6 +44,8 @@ module.exports = infinity = async (client, m, chatUpdate) => {
 const Heroku = require("heroku-client");  
  const appname = process.env.APP_NAME || '';
  const herokuapi = process.env.HEROKU_API;
+    const author = process.env.STICKER_AUTHOR || 'Kresswell';
+    const packname = process.env.STICKER_PACKNAME || 'Kresswell';
 
     const args = body.trim().split(/ +/).slice(1);
     const pushname = m.pushName || "No Name";
@@ -324,6 +326,24 @@ break;
 break;
 
 //download commands
+
+          case "sticker": case "s": { 
+            if (/image/.test(mime)) { 
+
+                 let media = await client.downloadMediaMessage(qmsg); 
+                 let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: packname, author: author }); 
+                 await fs.unlinkSync(encmedia); 
+             } else if (/video/.test(mime)) { 
+             m.reply("wait a moment"); 
+                 if (qmsg.seconds > 11) return m.reply('Video is too long for conversion!'); 
+                 let media = await client.downloadMediaMessage(qmsg); 
+                 let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: packname, author: author }); 
+                 await fs.unlinkSync(encmedia); 
+             } else { 
+                 m.reply(`Send an image or short video with the caption ${prefix + command}`); 
+                 } 
+          }
+          break;
 
 case 'play':
     case 'stream': {
