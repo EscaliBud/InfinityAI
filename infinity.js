@@ -128,6 +128,18 @@ if (autobio === 'TRUE'){
 *┃➥ Creator : Kresswell*
 *┗━──────────────*
 
+*⌜ Admin Commands ⌟*
+
+*┏━───────────────╮*
+*┃➥Mute*
+*┃➥Unmute*
+*┃➥Promote*
+*┃➥Demote*
+*┃➥Open*
+*┃➥Close*
+*┗━───────────────╯*
+
+
 *⌜ Utilities ⌟*
 
 *┏━───────────────╮*
