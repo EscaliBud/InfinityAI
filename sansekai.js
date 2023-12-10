@@ -76,15 +76,15 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
             
 *(ChatGPT)*
 Cmd: ${prefix}ai 
-Tanyakan apa saja kepada AI. 
+Ask AI anything 
 
 *(DALL-E)*
 Cmd: ${prefix}img
-Membuat gambar dari teks
+Generate Images Using our Bot
 
 *(Source Code Bot)*
 Cmd: ${prefix}sc
-Menampilkan source code bot yang dipakai`)
+Get the source code for this Bot`)
           break;
         case "ai": case "openai": case "chatgpt": case "ask":
           try {
