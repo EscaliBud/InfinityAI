@@ -3,7 +3,6 @@ const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, g
 const fs = require("fs");
 const util = require("util");
 const chalk = require("chalk");
-const yts = require("yt-search");
 const OpenAI = require("openai");
 let setting = require("./key.json");
 const openai = new OpenAI({ apiKey: setting.keyopenai });
