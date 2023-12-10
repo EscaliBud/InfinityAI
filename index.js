@@ -1,5 +1,6 @@
 const sessionName = "infinityAI";
 const donet = "https://github.com/EscaliBud";
+const owner = ["254798242085"]; // This will send a notification once the bot reconnects
 const {
   default: sansekaiConnect,
   useMultiFileAuthState,
@@ -253,8 +254,7 @@ async function startHisoka() {
       console.log(color("InfinityAI successfully conneted to server", "green"));
       console.log(color("Follow creator at https://github.com/EscaliBud", "yellow"));
       console.log(color("Type /menu to see menu"));
-      client.sendMessage(botNumber, { text: `InfinityAI started!\n\n Bot By Infinity Hackers :)\n${donet}` });
-    }
+            client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n\n InfinityAI :)\n${donet}` });
     // console.log('Connected...', update)
   });
 
