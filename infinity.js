@@ -75,7 +75,8 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
     if (isCmd2) {
       switch (command) {
         case "help": case "menu": case "start": case "info":
-          m.reply(`
+          client.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/1dDfqWq/29cd4d80d509.jpg' }, caption: `
+
 
 *┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
 *┃*
@@ -96,8 +97,11 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
 *┃➥Ytmp3*
 *┃➥YTV*
 *┗━───────────────╯*
-
-  `)
+`, fileLength: "9999999999999999999999"}, { quoted: m }); 
+           break;
+          m.reply(`This Public bot is under development.`)
+          // Group Commands
+      
           break;
         case "ai": case "openai": case "chatgpt": case "ask":
           try {
