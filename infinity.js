@@ -57,6 +57,7 @@ const Heroku = require("heroku-client");
 const wapresence = process.env.WA_PRESENCE || 'recording';
     const autoread = process.env.AUTOREAD || 'TRUE';
 const autobio = process.env.AUTOBIO || 'TRUE';
+const antilinkall = process.env.ANTILINK_ALL || 'TRUE';
     const botNumber = await client.decodeJid(client.user.id);
     const itsMe = m.sender == botNumber ? true : false;
     let text = (q = args.join(" "));
@@ -144,9 +145,21 @@ if (autobio === 'TRUE'){
                          }, 10 * 1000) 
 
 }
-/*if (autobio === 'TRUE'){ 
- client.updateProfileStatus(`This is InfinityAI by Kresswell`).catch(_ => _) 
-         } */
+if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
+
+ ki = m.sender; 
+
+ client.sendMessage(m.chat, { 
+
+                delete: { 
+                   remoteJid: m.chat, 
+                   fromMe: false, 
+                   id: m.key.id, 
+                   participant: ki
+                } 
+             }).then(() => client.groupParticipantsUpdate(m.chat, [ki], 'remove')); 
+ client.sendMessage(m.chat, {text:`Hello there \n\n@${ki.split("@")[0]}, sending links is not allowed here!!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
+       }   
 
     if (isCmd2 && !m.isGroup) {
       console.log(chalk.black(chalk.bgWhite("[ LOGS ]")), color(argsLog, "turquoise"), chalk.magenta("From"), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace("@s.whatsapp.net", "")} ]`));
