@@ -5,6 +5,7 @@ const util = require("util");
 const speed = require("performance-now");
 const chalk = require("chalk");
 const OpenAI = require("openai");
+const os = require('os');
 const Genius = require("genius-lyrics"); 
 let setting = require("./key.json");
 const yts = require("yt-search");
