@@ -44,6 +44,9 @@ module.exports = infinity = async (client, m, chatUpdate) => {
 const Heroku = require("heroku-client");  
  const appname = process.env.APP_NAME || '';
  const herokuapi = process.env.HEROKU_API;
+
+    const kress = (m.quoted || m); 
+         const quoted = (kress.mtype == 'buttonsMessage') ? kress[Object.keys(kress)[1]] : (kress.mtype == 'templateMessage') ? kress.hydratedTemplate[Object.keys(kress.hydratedTemplate)[1]] : (kress.mtype == 'product') ? kress[Object.keys(kress)[0]] : m.quoted ? m.quoted : m; 
     const mime = (quoted.msg || quoted).mimetype || "";
             const qmsg = (quoted.msg || quoted);
     const author = process.env.STICKER_AUTHOR || 'Kresswell';
