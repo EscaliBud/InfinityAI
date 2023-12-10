@@ -60,7 +60,7 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
       console.log(chalk.black(chalk.bgWhite("[ LOGS ]")), color(argsLog, "turquoise"), chalk.magenta("From"), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace("@s.whatsapp.net", "")} ]`));
     } else if (isCmd2 && m.isGroup) {
       console.log(
-        chalk.black(chalk.bgWhite("[ LOGS ]")),
+        chalk.black(chalk.bgWhite("[ IHK ]")),
         color(argsLog, "turquoise"),
         chalk.magenta("From"),
         chalk.green(pushname),
@@ -73,7 +73,7 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
     if (isCmd2) {
       switch (command) {
         case "help": case "menu": case "start": case "info":
-          m.reply(`*Whatsapp Bot OpenAI*
+          m.reply(`*Infinity AI Menu*
             
 *(ChatGPT)*
 Cmd: ${prefix}ai 
