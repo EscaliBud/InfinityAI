@@ -61,7 +61,7 @@ const runtime = function (seconds) {
  } 
 
  const timestamp = speed(); 
-   const infinityspeed = speed() - timestamp ;
+   const infinityspeed = speed() - timestamp 
 
     const color = (text, color) => {
       return !color ? chalk.green(text) : chalk.keyword(color)(text);
