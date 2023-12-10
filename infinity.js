@@ -111,7 +111,7 @@ Get the source code for this Bot`)
         case "img": case "ai-img": case "image": case "images": case "dall-e": case "dalle":
           try {
             // tidak perlu diisi apikeynya disini, karena sudah diisi di file key.json
-            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
+            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey not set.\n Please set up your key on key.json and restart bot.\n\nYou can get API keys from: https://beta.openai.com/account/api-keys");
             if (!text) return reply(`Membuat gambar dari AI.\n\nContoh:\n${prefix}${command} Wooden house on snow mountain`);
             const image = await openai.images.generate({ 
               model: "dall-e-3",
