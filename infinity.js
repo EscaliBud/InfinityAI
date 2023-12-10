@@ -129,7 +129,8 @@ const runtime = function (seconds) {
           // Group Commands
       
           break;
-        case "ai": case "openai": case "chatgpt": case "ask":
+
+       /* case "ai": case "openai": case "chatgpt": case "ask":
           try {
             // tidak perlu diisi apikeynya disini, karena sudah diisi di file key.json
             if (setting.keyopenai === "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") return reply("Apikey not set\n\nSet your api on key.json and restart bot\n\nGet your API key from this website: https://beta.openai.com/account/api-keys");
@@ -173,8 +174,83 @@ const runtime = function (seconds) {
             m.reply("Sorry,There seems to be an error!! :"+ error.message);
           }
         }
-          break;
+          break; */
+
+        case "gpt": case "openai": 
+
+
+            if (!text) return reply("I need more text please. Make your query a bit longer.");
+
+           const configuration = new Configuration({
+
+              apiKey: setting,
+
+            });
+
+            const openai = new OpenAIApi(configuration);
+
+            try {
+
+const response = await openai.createChatCompletion({
+
+          model: "gpt-3.5-turbo",
+
+          messages: [{role: "user", content: text}],
+
+          });
+
+          m.reply(`${response.data.choices[0].message.content}`);
+
+          } catch (error) {
+
+          if (error.response) {
+
+            console.log(error.response.status);
+
+            console.log(error.response.data);
+
+            console.log(`${error.response.status}\n\n${error.response.data}`);
+
+          } else {
+
+            console.log(error);
+
+            m.reply("I\'m Facing An Error:"+ error.message);
+
+          }
+
+            }
+
+break;
+        case "img": case "ai-img": case "image": case "images":
+          try {
+            if (setting === "ADD OPENAI API KEY") return reply("I need an openAi API key in my .env file.");
+            if (!text) return reply(`This will generate an AI-BASED image. Note that image generated might not be realistic.`);
+            const configuration = new Configuration({
+              apiKey: setting,
+            });
+            const openai = new OpenAIApi(configuration);
+            const response = await openai.createImage({
+              prompt: text,
+              n: 1,
+              size: "512x512",
+            });
+            //console.log(response.data.data[0].url)
+            client.sendImage(from, response.data.data[0].url, text, mek);
+            } catch (error) {
+          if (error.response) {
+            console.log(error.response.status);
+            console.log(error.response.data);
+            console.log(`${error.response.status}\n\n${error.response.data}`);
+          } else {
+            console.log(error);
+            m.reply("An error has occurred:"+ error.message);
+          }
+        }
+break;
+
 //download commands
+
 case 'play':
     case 'stream': {
         if (!text) {
