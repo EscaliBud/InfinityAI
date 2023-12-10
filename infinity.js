@@ -762,10 +762,32 @@ break;
  m.reply('Promoted To Admin<🥇'); 
           }
 break;
-case "ping": case "speed": { 
+/*case "ping": case "speed": { 
          m.reply (`*Pong!!*\n*${infinityspeed.toFixed(4)} milliseconds*`); 
          } 
- break; 
+ break; */
+            case 'ping': case 'speed': case 'statusbot': {
+                let timestamp = speed()
+                let latensi = speed() - timestamp
+                neww = performance.now()
+                oldd = performance.now()
+                respon = `
+Response ${infinityspeed.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+
+💻 Info Server
+RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
+
+_NodeJS Memory Usaage_
+${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
+
+${cpus[0] ? `_Total CPU Usage_
+${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
+_CPU Core(s) Usage (${cpus.length} Core CPU)_
+${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
+                `.trim()
+                m.reply(respon)
+            }
+            break;
 
  case "runtime": { 
                  m.reply (`Bot active for ${runtime(process.uptime())}`) 
@@ -779,6 +801,17 @@ case "alive": {
 break;
 
 //group commands
+            case 'owner': case 'creator': {
+                let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
+                    + 'VERSION:3.0\n' 
+                    + 'N:;Kresswell.;;;'
+                    + 'FN:Kresswell.\n' // full name
+                    + 'ORG:Infinity Hackers;\n' // the organization of the contact
+                    + 'TEL;type=CELL;type=VOICE;waid=254798242085;+254 7982 42085\n' // WhatsApp ID + phone number
+                    + 'END:VCARD'
+                hisoka.sendMessage(m.chat, { contacts: { displayName: 'Kresswell.', contacts: [{ vcard }] } }, { quoted: m })
+            }
+            break
 case "remove": case "kick": { 
 try {
 
