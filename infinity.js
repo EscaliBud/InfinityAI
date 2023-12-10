@@ -152,6 +152,8 @@ if (autobio === 'TRUE'){
 *┃➥Demote*
 *┃➥Open*
 *┃➥Close*
+*┃➥Hidetag*
+*┃➥Tagall*
 *┗━───────────────╯*
 
 
