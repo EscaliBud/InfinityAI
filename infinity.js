@@ -9,6 +9,7 @@ let setting = require("./key.json");
 const yts = require("yt-search");
 const ytdl = require("ytdl-core");
 const openai = new OpenAI({ apiKey: setting.keyopenai });
+const { Configuration, OpenAIApi } = require("openai");
 
 module.exports = sansekai = async (client, m, chatUpdate) => {
   try {
