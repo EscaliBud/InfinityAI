@@ -5,9 +5,11 @@ const util = require("util");
 const speed = require("performance-now");
 const chalk = require("chalk");
 const OpenAI = require("openai");
+const Genius = require("genius-lyrics"); 
 let setting = require("./key.json");
 const yts = require("yt-search");
 const ytdl = require("ytdl-core");
+ const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oNa9-hsrLxQV5l5FiAZO"); // Scrapes if no key is provided
 //const openai = new OpenAI({ apiKey: setting.keyopenai });
 const { Configuration, OpenAIApi } = require("openai");
 
@@ -515,6 +517,22 @@ break;
             reply(e.toString())
         }
 break;
+          case "lyrics": 
+ try { 
+ if (!text) return reply("Provide a song name!"); 
+ const searches = await Client.songs.search(text); 
+ const firstSong = searches[0]; 
+ //await client.sendMessage(from, {text: firstSong}); 
+ const lyrics = await firstSong.lyrics(); 
+ await client.sendMessage(from, { text: lyrics}, { quoted: m }); 
+ } catch (error) { 
+             reply(`I did not find any lyrics for ${text}. Try searching a different song.`); 
+             console.log(error); 
+         } 
+ //const artist = await Client.artists.get(456537); 
+ //await client.sendMessage(from, { text: artist} {quoted: m}); 
+ // console.log("About the Artist:\n", artist, "\n"); 
+ break ;
 
           case "song": { 
  const getRandom = (ext) => { 
