@@ -128,7 +128,7 @@ Get the source code for this Bot`)
             console.log(`${error.response.status}\n\n${error.response.data}`);
           } else {
             console.log(error);
-            m.reply("Maaf, sepertinya ada yang error :"+ error.message);
+            m.reply("Sorry,There seems to be an error!! :"+ error.message);
           }
         }
           break;
