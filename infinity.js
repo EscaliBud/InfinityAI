@@ -157,6 +157,7 @@ if (autobio === 'TRUE'){
 *┃➥Close*
 *┃➥Hidetag*
 *┃➥Tagall*
+*┃➥Kick*
 *┗━───────────────╯*
 
 
