@@ -670,7 +670,7 @@ break;
           }
 break;
 case "ping": case "speed": { 
-         m.reply (`*Pong!!\n${infinityspeed.toFixed(4)} milliseconds*`); 
+         m.reply (`*Pong!!*\n*${infinityspeed.toFixed(4)} milliseconds*`); 
          } 
  break; 
 
