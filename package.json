@@ -1,5 +1,5 @@
 {
-  "name": "Wa-OpenAI",
+  "name": "InfinityAI",
   "version": "2.1.0",
   "description": "WhatsApp Bot OpenAI ChatGPT Using Lib Baileys Multi Device",
   "main": "index.js",
@@ -19,7 +19,7 @@
     "whatsapp-multi-device"
   ],
   "base": "https://github.com/DikaArdnt/Hisoka-Morou",
-  "author": "Yusril",
+  "author": "EscaliBud",
   "license": "MIT",
   "dependencies": {
     "@hapi/boom": "^10.0.0",
@@ -42,10 +42,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sansekai/Wa-OpenAI.git"
+    "url": "git+https://github.com/EscaliBud/InfinityAI.git"
   },
   "bugs": {
-    "url": "https://github.com/Sansekai/Wa-OpenAI/issues"
+    "url": "https://github.com/EscaliBud/InfinityAI/issues"
   },
-  "homepage": "https://github.com/Sansekai/Wa-OpenAI#readme"
+  "homepage": "https://github.com/EscaliBud/InfinityAI#readme"
 }
