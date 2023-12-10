@@ -255,6 +255,9 @@ async function startHisoka() {
       console.log(color("Follow creator at https://github.com/EscaliBud", "yellow"));
       console.log(color("Type /menu to see menu"));
             client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n\n InfinityAI :)\n${donet}`});
+}
+ 
+    });
 
   client.ev.on("creds.update", saveCreds);
 
