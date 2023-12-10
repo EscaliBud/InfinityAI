@@ -16,6 +16,7 @@ const {
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
+const events = require('./lib/commands')
 const axios = require("axios");
 const chalk = require("chalk");
 const figlet = require("figlet");
