@@ -54,6 +54,8 @@ const Heroku = require("heroku-client");
 
     const args = body.trim().split(/ +/).slice(1);
     const pushname = m.pushName || "No Name";
+const wapresence = process.env.WA_PRESENCE || 'recording';
+    const autoread = process.env.AUTOREAD || 'TRUE';
 const autobio = process.env.AUTOBIO || 'TRUE';
     const botNumber = await client.decodeJid(client.user.id);
     const itsMe = m.sender == botNumber ? true : false;
@@ -111,6 +113,21 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
 
     // Push Message To Console
     let argsLog = budy.length > 30 ? `${q.substring(0, 30)}...` : budy;
+
+if (wapresence === 'recording' && !m.isGroup) { 
+
+  client.sendPresenceUpdate('recording', m.chat);
+} else if (wapresence === 'typing' && !m.isGroup) { 
+
+  client.sendPresenceUpdate('composing', m.chat);
+    }
+
+
+
+
+    if (autoread === 'TRUE' && !m.isGroup) { 
+             client.readMessages([m.key])
+    }
 
 
 if (autobio === 'TRUE'){ 
