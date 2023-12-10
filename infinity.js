@@ -51,6 +51,7 @@ const autobio = process.env.AUTOBIO || 'TRUE';
     const reply = m.reply;
     const sender = m.sender;
     const mek = chatUpdate.messages[0];
+    const getGroupAdmins = (participants) => { 
 
 const runtime = function (seconds) { 
  seconds = Number(seconds); 
