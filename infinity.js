@@ -120,11 +120,12 @@ const runtime = function (seconds) {
 
 *┏━───────────────╮*
 *┃➥play*
+*┃➥Lyrics*
 *┃➥Yts*
 *┃➥Yta*
 *┃➥ytmp4*
 *┃➥Ytmp3*
-*┃➥YTV*
+*┃➥Ytvideo*
 *┗━───────────────╯*
 `, fileLength: "9999999999999999999999"}, { quoted: m }); 
            break;
