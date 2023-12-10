@@ -75,19 +75,29 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
     if (isCmd2) {
       switch (command) {
         case "help": case "menu": case "start": case "info":
-          m.reply(`*Infinity AI Menu*
-            
-*(ChatGPT)*
-Cmd: ${prefix}ai 
-Ask AI anything 
+          m.reply(`
 
-*(DALL-E)*
-Cmd: ${prefix}img
-Generate Images Using our Bot
+*┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
+*┃*
+*┃➥ Repo : https://github.com/EscaliBud/InfinityAI*
+*┃➥ Library : Baileys*
+*┃➥ Bot Name : InfinityAI*
+*┃➥ Whatsapp Bot Ver : 2.12.0*
+*┃➥ Creator : Kresswell*
+*┗━──────────────*
 
-*(Source Code Bot)*
-Cmd: ${prefix}sc
-Get the source code for this Bot`)
+*⌜ Downloader & Media ⌟*
+
+*┏━───────────────╮*
+*┃➥play*
+*┃➥Yts*
+*┃➥Yta*
+*┃➥ytmp4*
+*┃➥Ytmp3*
+*┃➥YTV*
+*┗━───────────────╯*
+
+  `)
           break;
         case "ai": case "openai": case "chatgpt": case "ask":
           try {
