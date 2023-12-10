@@ -707,6 +707,28 @@ case "alive": {
 break;
 
 //group commands
+case "remove": case "kick": { 
+try {
+
+                 if (!m.isGroup) throw group; 
+  if (!isBotAdmin) throw botAdmin; 
+  if (!isAdmin) throw admin; 
+
+
+
+                 let users = m.mentionedJid[0] ? m.mentionedJid : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net']; 
+ if (!users) throw NotOwner; 
+ if (users  == client.decodeJid(client.user.id)) throw 'Bot cannot remove itself 😡';
+ if (users == Owner) { m.reply('Cannot remove my Lord!!')}; 
+                 await client.groupParticipantsUpdate(m.chat, users, 'remove'); 
+await m.reply('Successfully removed!'); 
+} catch (errr) { 
+ await reply("Something is wrong! Did you give me a user to remove?")}
+
+
+         } 
+
+  break;
 
           case "invite": case "link": { 
                  if (!m.isGroup) throw group; 
