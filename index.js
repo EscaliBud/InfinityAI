@@ -1,5 +1,5 @@
-const sessionName = "yusril";
-const donet = "https://saweria.co/sansekai";
+const sessionName = "infinityAI";
+const donet = "https://github.com/EscaliBud";
 const {
   default: sansekaiConnect,
   useMultiFileAuthState,
@@ -250,10 +250,10 @@ async function startHisoka() {
       }
     } else if (connection === "open") {
       const botNumber = await client.decodeJid(client.user.id);
-      console.log(color("Bot success conneted to server", "green"));
-      console.log(color("Donate for creator https://saweria.co/sansekai", "yellow"));
+      console.log(color("InfinityAI successfully conneted to server", "green"));
+      console.log(color("Follow creator at https://github.com/EscaliBud", "yellow"));
       console.log(color("Type /menu to see menu"));
-      client.sendMessage(botNumber, { text: `Bot started!\n\njangan lupa support ya bang :)\n${donet}` });
+      client.sendMessage(botNumber, { text: `InfinityAI started!\n\n Bot By Infinity Hackers :)\n${donet}` });
     }
     // console.log('Connected...', update)
   });
