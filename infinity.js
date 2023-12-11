@@ -3,6 +3,11 @@ const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, g
 const fs = require("fs");
 const util = require("util");
 const speed = require("performance-now");
+const { exec, spawn, execSync } = require("child_process");
+const axios = require('axios');
+const { fromBuffer } = require('file-type');
+const path = require('path');
+const { performance } = require('perf_hooks');
 const chalk = require("chalk");
 const OpenAI = require("openai");
 const os = require('os');
