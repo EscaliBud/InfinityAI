@@ -17,6 +17,7 @@ const {
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/kressexif'); 
 
 const axios = require("axios");
 const { isUrl, generateMessageTag } = require('./lib/myfunc')
