@@ -24,6 +24,7 @@ const chalk = require("chalk");
 const figlet = require("figlet");
 const _ = require("lodash");
 const PhoneNumber = require("awesome-phonenumber");
+const FileType = require("file-type");
 
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
     const autoviewstatus = process.env.AUTOVIEW_STATUS || 'TRUE';
