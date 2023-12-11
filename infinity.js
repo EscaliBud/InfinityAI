@@ -272,7 +272,9 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Yta*
 *┃➥ytmp4*
 *┃➥Ytmp3*
-*┃➥Ytvideo*
+*┃➥Sticker*
+*┃➥Toimg*
+*┃➥Smeme*
 *┗━───────────────╯*
 `;
 
@@ -416,7 +418,7 @@ break;
 //download commands
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
-                if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
+                if (!/webp/.test(mime)) throw `Tag a sticker with the caption *${prefix + command}*`
                 m.reply('Please wait......')
                 let media = await client.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
