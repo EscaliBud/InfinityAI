@@ -1000,11 +1000,11 @@ case 'porno': case 'porn': case 'bokep': {
             break
             case 'pong': case 'botstatus': case 'statusbot': {
                 let timestamp = speed()
-                let latensi = speed() - timestamp
+                let kresswelli = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-Kecepatan Respon ${infinity.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+Ping Response ${kresswellp.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
 💻 Info Server
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
