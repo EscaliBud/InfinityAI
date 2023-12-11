@@ -1007,11 +1007,11 @@ google({'query':text}).then(result =>{
            msg+`◇ Tittle : ${g.title}\n`;
            msg+`◇ Description : ${g.snippet} \n`;
            msg+`◇ Link : ${g.link} \n\n`;
-})
+}
 
 
 return m.reply(msg);
-}
+})
 break;
 case 'porno': case 'porn': case 'bokep': {
                 m.reply('Please wait')
