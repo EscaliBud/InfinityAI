@@ -1006,7 +1006,7 @@ google({'query':text}).then(result =>{
    for (let g of res) {
            msg+`◇ Tittle : ${g.title}\n`;
            msg+`◇ Description : ${g.snippet} \n`;
-           msg+'◇ Link : $g.link}
+           msg+'◇ Link : ${g.link}
 \n\n_____________________________________\n\n`;
 }
 
