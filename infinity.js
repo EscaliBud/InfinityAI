@@ -416,13 +416,13 @@ break;
           case "sticker": case "s": { 
             if (/image/.test(mime)) { 
 
-                 let media = await client.downloadMediaMessage(qmsg); 
+                                 let media = await client.downloadAndSaveMediaMessage(qmsg)
                  let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: packname, author: author }); 
                  await fs.unlinkSync(encmedia); 
              } else if (/video/.test(mime)) { 
              m.reply("wait a moment"); 
                  if (qmsg.seconds > 11) return m.reply('Video is too long for conversion!'); 
-                 let media = await client.downloadMediaMessage(qmsg); 
+                 let media = await client.downloadAndSaveMediaMessage(qmsg); 
                  let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: packname, author: author }); 
                  await fs.unlinkSync(encmedia); 
              } else { 
