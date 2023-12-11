@@ -889,7 +889,7 @@ break;
              let txt = `*➥INFINITY AI BROADCAST*:\n\n ${text}\n\n*Cast By*: ${pushname}` 
              await client.sendMessage(i, { 
                  image: { 
-                     url: https://te.legra.ph/file/5b3c55eb8f214b2006c06.jpg" 
+                     url: "https://te.legra.ph/file/5b3c55eb8f214b2006c06.jpg" 
                  }, 
                  caption: `${txt}` 
              }) 
