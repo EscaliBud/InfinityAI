@@ -998,7 +998,7 @@ case "getvar":
 
 
  break;
-case 'google' case 'search' :
+case 'google': case 'search' :
 if(!text) m.reply(`Give me a query \n*Example: .google who is Kresswell.*`);
 // let google =require('google-it');
 google({'query':text}).then(result =>{
