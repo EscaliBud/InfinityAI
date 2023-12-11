@@ -2,7 +2,7 @@ const sessionName = "infinityAI";
 const donet = "https://github.com/EscaliBud";
 const owner = ["254798242085"]; // This will send a notification once the bot reconnects
 const {
-  default: sansekaiConnect,
+  default: infinityConnect,
   useMultiFileAuthState,
   DisconnectReason,
   fetchLatestBaileysVersion,
