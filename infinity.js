@@ -995,42 +995,7 @@ case "getvar":
                  await client.groupAcceptInvite(result).then((res) =>  reply(jsonformat(res))).catch((err) =>reply(`Link has problem.`)) 
 
              } 
-
-
- break;
-case 'google': case 'search' :
-if(!text) m.reply(`Give me a query \n*Example: .google who is Kresswell.*`);
-// let google =require('google-it');
-google({'query':text}).then(result =>{
-   let msg=`Google search from : ${text} \n\n`;
-   for (let g of res) {
-           msg+`◇ Tittle : ${g.title}\n`;
-           msg+`◇ Description : ${g.snippet} \n`;
-           msg+`◇ Link : ${g.link} \n\n`;
-}
-
-
-return m.reply(msg);
-})
 break;
-case 'porno': case 'porn': case 'bokep': {
-                m.reply('Please wait')
-                anu = await porno()
-                client.sendMessage(m.chat, { video: { url: 'https://tikporntok.com/'+anu.video }, caption: `⭔ Title : ${anu.title}\n⭔ Viewers : ${anu.views}\n⭔ Tags : ${anu.tags}\n⭔ Likes : ${anu.like}\n⭔ Dislikes : ${anu.dislike}\n⭔ Favourite : ${anu.favorite}\n⭔ Time Upload : ${anu.upload}\n⭔ Description : ${anu.desc}\n⭔ Source : https://tikporntok.com/${anu.source}` }, { quoted: m })
-            }
-            break;
-            case 'public': {
-                if (!isCreator) throw mess.owner
-                hisoka.public = true
-                m.reply('public mode successfully activated')
-            }
-            break
-            case 'self': {
-                if (!isCreator) throw mess.owner
-                hisoka.public = false
-                m.reply('Private Mode Successfully Activated')
-            }
-            break
             case 'ping': case 'system': case 'speed': {
                 let timestamp = speed()
                 let kresswelli = speed() - timestamp
