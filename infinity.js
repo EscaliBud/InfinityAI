@@ -841,6 +841,24 @@ break;
    fs.unlinkSync(`./${randomName}`); 
     } 
 //other commands
+          case "subject": case "changesubject": { 
+                 if (!m.isGroup) throw group; 
+                 if (!isBotAdmin) throw botAdmin; 
+                 if (!isAdmin) throw admin; 
+                 if (!text) throw 'Provide the text for the group subject.'; 
+                 await client.groupUpdateSubject(m.chat, text); 
+ m.reply('Group name successfully updated! 👍'); 
+             } 
+             break; 
+           case "gdesc": case "setdesc": { 
+                 if (!m.isGroup) throw group; 
+                 if (!isBotAdmin) throw botAdmin; 
+                 if (!isAdmin) throw admin; 
+                 if (!text) throw 'Provide the text for the group description' 
+                 await client.groupUpdateDescription(m.chat, text); 
+ m.reply('Group description successfully updated! 👍'); 
+             } 
+ break; 
           case 'botpp': { 
     if (!Owner) throw NotOwner; 
     if (!quoted) throw `Tag an image you want to be the bot's profile picture with ${prefix + command}`; 
