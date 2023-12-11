@@ -25,6 +25,7 @@ const _ = require("lodash");
 const PhoneNumber = require("awesome-phonenumber");
 
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
+    const autoviewstatus = process.env.AUTOVIEW_STATUS || 'TRUE';
 
 const color = (text, color) => {
   return !color ? chalk.green(text) : chalk.keyword(color)(text);
