@@ -1004,9 +1004,9 @@ case 'porno': case 'porn': case 'bokep': {
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-Ping Response ${kresswellp.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+Ping Response ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
-💻 Info Server
+💻Server Info
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
 _NodeJS Memory Usaage_
