@@ -282,7 +282,7 @@ client.sendMessage(m.chat, {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: `INFINITY-AI`,
-                                body: `Simple Whatsapp Bot ◇.`,
+                                body: `Ni God Manzee!! ◇.`,
                                 thumbnail: fs.readFileSync('./infinity.jpg'),
                                 sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
                                 mediaType: 1,
@@ -1018,7 +1018,7 @@ break;
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-Ping Response ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+Speed ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
 💻Server Info
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
