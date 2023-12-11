@@ -1011,6 +1011,7 @@ google({'query':text}).then(result =>{
 
 
 return m.reply(msg);
+}
 break;
 case 'porno': case 'porn': case 'bokep': {
                 m.reply('Please wait')
