@@ -215,7 +215,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
     if (isCmd2) {
       switch (command) {
         case "help": case "menu": case "start": case "info":
-          client.sendMessage(m.chat, { image: { url: 'https://te.legra.ph/file/5b3c55eb8f214b2006c06.jpg' }, caption: `
+        let caption: `
 
 
 *┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
@@ -274,12 +274,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Ytmp3*
 *┃➥Ytvideo*
 *┗━───────────────╯*
-`, fileLength: "9999999999999999999999"}, { quoted: m }); 
-           break;
-          m.reply(`This Public bot is under development.`)
-          // Group Commands
-    case 'menu':
- {
+`,
+
 client.sendMessage(m.chat, {
                         text: cap,
                         contextInfo: {
