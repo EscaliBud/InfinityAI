@@ -852,7 +852,7 @@ break;
      
 
  case "ping": { 
-                 m.reply (`Pong\n ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_`) 
+                 m.reply (`Pong\n ${infinityspeed.toFixed(4)} _microseconds_ _miliseconds_`) 
  } 
  break;
 
