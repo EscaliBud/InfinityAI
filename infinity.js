@@ -233,6 +233,9 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Block*
 *┃➥Unblock*
 *┃➥Join*
+*┃➥Setvar*
+*┃➥Getvar*
+*┃➥Restart*
 *┗━───────────────╯*
 
 *⌜ Admin Commands ⌟*
