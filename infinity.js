@@ -214,7 +214,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
     if (isCmd2) {
       switch (command) {
         case "help": case "menu": case "start": case "info":
-          client.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/1dDfqWq/29cd4d80d509.jpg' }, caption: `
+          client.sendMessage(m.chat, { image: { url: 'https://te.legra.ph/file/5b3c55eb8f214b2006c06.jpg' }, caption: `
 
 
 *┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
@@ -821,7 +821,7 @@ break;
 
 case "alive": { 
 
- client.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/1dDfqWq/29cd4d80d509.jpg' }, caption: `Hello ${m.pushName}, InfinityAI is active\n\nActive for:  ${runtime(process.uptime())}\n\nType ${prefix}help.`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
+ client.sendMessage(m.chat, { image: { url: 'https://te.legra.ph/file/5b3c55eb8f214b2006c06.jpg' }, caption: `Hello ${m.pushName}, InfinityAI is active\n\nActive for:  ${runtime(process.uptime())}\n\nType ${prefix}help.`, fileLength: "9999999999898989899999999" }, { quoted: m }); 
  }
 break;
 
