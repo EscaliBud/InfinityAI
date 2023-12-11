@@ -166,7 +166,11 @@ async function startHisoka() {
       console.log(err);
     }
   });
+      if (autoviewstatus === 'TRUE' && mek.key && mek.key.remoteJid === "status@broadcast") {
 
+         client.readMessages([mek.key]);
+
+}
   // Handle error
   const unhandledRejections = new Map();
   process.on("unhandledRejection", (reason, promise) => {
