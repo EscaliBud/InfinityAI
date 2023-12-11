@@ -1004,9 +1004,9 @@ if(!text) m.reply(`Give me a query \n*Example: .google who is Kresswell.*`);
 google({'query':text}).then(result =>{
    let msg=`Google search from : ${text} \n\n`;
    for (let g of res) {
-           msg+= `◇ Tittle : ${g.title}\n`;
-           msg+ = `◇ Description : ${g.snippet} \n`;
-           msg+='◇ Link : $g.link}
+           msg+`◇ Tittle : ${g.title}\n`;
+           msg+`◇ Description : ${g.snippet} \n`;
+           msg+'◇ Link : $g.link}
 \n\n_____________________________________\n\n`;
 }
 
