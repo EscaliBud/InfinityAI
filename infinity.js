@@ -851,8 +851,8 @@ break;
 break;
      
 
- case "runtime": { 
-                 m.reply (`Bot active for ${runtime(process.uptime())}`) 
+ case "ping": { 
+                 m.reply (`Pong\n ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_`) 
  } 
  break;
 
@@ -1032,7 +1032,7 @@ case "getvar":
 
              } 
 break;
-            case 'ping': case 'system': case 'speed': {
+            case 'system': case 'speed': {
                 let timestamp = speed()
                 let kresswelli = speed() - timestamp
                 neww = performance.now()
