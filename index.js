@@ -146,8 +146,9 @@ async function startHisoka() {
   const client = infinityConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: Browsers.macOS('Desktop'),
+       browser: ["INFINITY-AI", "Safari", "5.1.7"],
     auth: state,
+syncFullHistory: true,
   });
   store.bind(client.ev);
 
