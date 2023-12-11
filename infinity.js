@@ -794,7 +794,7 @@ break;
                     + 'ORG:Infinity Hackers;\n' // the organization of the contact
                     + 'TEL;type=CELL;type=VOICE;waid=254798242085;+254 7982 42085\n' // WhatsApp ID + phone number
                     + 'END:VCARD'
-                hisoka.sendMessage(m.chat, { contacts: { displayName: 'Kresswell.', contacts: [{ vcard }] } }, { quoted: m })
+                client.sendMessage(m.chat, { contacts: { displayName: 'Kresswell.', contacts: [{ vcard }] } }, { quoted: m })
             }
             break
 case "remove": case "kick": { 
