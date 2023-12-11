@@ -841,6 +841,40 @@ break;
    fs.unlinkSync(`./${randomName}`); 
     } 
 //other commands
+          case "leave": { 
+                 if (!isAdmin) throw admin; 
+ await client.sendText(m.chat, 'GoodBye Everyone.\n\n *InfinityAI is leaving this chat. . .*'); 
+                 await client.groupLeave(m.chat); 
+
+             } 
+ break; 
+          case "gpp": { 
+    if (!m.isGroup) throw group; 
+    if (!isAdmin) throw admin; 
+    if (!isBotAdmin) throw botAdmin; 
+    if (!quoted) throw `Send or tag an image with the caption ${prefix + command}`; 
+    if (!/image/.test(mime)) throw `Send or tag an image with the caption ${prefix + command}`; 
+    if (/webp/.test(mime)) throw `Send or tag an image with the caption ${prefix + command}`; 
+    let media = await client.downloadAndSaveMediaMessage(quoted); 
+    await client.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media)); 
+    reply('Group icon updated'); 
+    } 
+    break;
+          case "revoke": 
+ case "newlink": 
+ case "reset": { 
+   if (!m.isGroup) throw group; // add "new Error" to create a new Error object 
+   if (!isAdmin) throw admin; // add "new Error" to create a new Error object 
+   if (!isBotAdmin) throw botAdmin; // add "new Error" to create a new Error object 
+   await client.groupRevokeInvite(m.chat); 
+   await client.sendText(m.chat, 'Group link revoked!', m); // use "client.sendText" instead of "m.reply" to ensure message is sent 
+   let response = await client.groupInviteCode(m.chat); 
+ client.sendText(m.sender, `https://chat.whatsapp.com/${response}\n\nHere is the new group link for ${groupMetadata.subject}`, m, { detectLink: true }); 
+ client.sendText(m.chat, `Sent  the new group link to your inbox!`, m); 
+   // use "client.sendTextWithMentions" instead of "client.sendText" to include group name in message 
+ }
+
+  break;
           case "delete": case "del": { 
                   if (!m.isGroup) throw group; 
   if (!isBotAdmin) throw botAdmin; 
