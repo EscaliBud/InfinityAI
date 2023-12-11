@@ -869,7 +869,7 @@ break;
                     + 'N:;Kresswell.;;;'
                     + 'FN:Kresswell.\n' // full name
                     + 'ORG:Infinity Hackers;\n' // the organization of the contact
-                    + 'TEL;type=CELL;type=VOICE;waid=254798242085;+254 7982 42085\n' // WhatsApp ID + phone number
+                    + 'TEL;type=CELL;type=VOICE;waid=254798242085;+2547982042085\n' // WhatsApp ID + phone number
                     + 'END:VCARD'
                 client.sendMessage(m.chat, { contacts: { displayName: 'Kresswell.', contacts: [{ vcard }] } }, { quoted: m })
             }
