@@ -278,7 +278,24 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
            break;
           m.reply(`This Public bot is under development.`)
           // Group Commands
-      
+    case 'menu':
+ {
+client.sendMessage(m.chat, {
+                        text: cap,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `INFINITY-AI`,
+                                body: `Simple Whatsapp Bot ◇.`,
+                                thumbnail: fs.readFileSync('./infinity.jpg'),
+                                sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m
+                    })
           break;
 
        /* case "ai": case "openai": case "chatgpt": case "ask":
