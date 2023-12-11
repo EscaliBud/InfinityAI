@@ -413,16 +413,16 @@ break;
             }
             break
 
-          case "sticker": case "s": { 
+                    case "sticker": case "s": { 
             if (/image/.test(mime)) { 
 
-                                 let media = await client.downloadAndSaveMediaMessage(qmsg)
+                 let media = await client.downloadMediaMessage(qmsg); 
                  let encmedia = await client.sendImageAsSticker(m.chat, media, m, { packname: packname, author: author }); 
                  await fs.unlinkSync(encmedia); 
              } else if (/video/.test(mime)) { 
              m.reply("wait a moment"); 
                  if (qmsg.seconds > 11) return m.reply('Video is too long for conversion!'); 
-                 let media = await client.downloadAndSaveMediaMessage(qmsg); 
+                 let media = await client.downloadMediaMessage(qmsg); 
                  let encmedia = await client.sendVideoAsSticker(m.chat, media, m, { packname: packname, author: author }); 
                  await fs.unlinkSync(encmedia); 
              } else { 
@@ -932,6 +932,12 @@ await m.reply('Successfully removed!');
  break;
 
 //owner commands
+case 'restart':  
+  if (!Owner) throw `Owner Only` 
+  reply(`Restarting. . .`)  
+  await sleep(3000)  
+  process.exit()  
+  break;
           case "block": { 
  if (!Owner) throw NotOwner; 
  if (!m.quoted) throw `Tag someone!`; 
