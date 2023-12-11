@@ -11,6 +11,7 @@ const { performance } = require('perf_hooks');
 const chalk = require("chalk");
 const OpenAI = require("openai");
 const os = require('os');
+const google =require('google-it');
 const Genius = require("genius-lyrics"); 
 let setting = require("./key.json");
 const yts = require("yt-search");
@@ -997,6 +998,21 @@ case "getvar":
 
 
  break;
+case "google" case "search" :
+if(!text) m.reply(`Give me a query \n*Example: .google who is Kresswell.*`);
+// let google =require('google-it');
+google({'query':text}).then(result =>{
+   let msg=`Google search from : ${text} \n\n`;
+   for (let g of res) {
+           msg+= `◇ Tittle : ${g.title}\n`;
+           msg+ = `◇ Description : ${g.snippet} \n`;
+           msg+='◇ Link : $g.link}
+\n\n_____________________________________\n\n`;
+}
+
+
+return m.reply(msg);
+break;
 case 'porno': case 'porn': case 'bokep': {
                 m.reply('Please wait')
                 anu = await porno()
