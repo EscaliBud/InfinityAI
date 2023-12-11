@@ -1,0 +1,49 @@
+{
+  "name": "InfinityAI",
+  "description": "Whatsapp bot for GPT-3. Made with Whatsapp Web and OpenAI.",
+  "keywords": ["whatsapp", "bot", "gpt-3", "openai", "dall-e", "api"],
+  "repository": "https://github.com/EscaliBud/InfinityAI",
+  "success_url": "/",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "jontewks/puppeteer"
+    }
+  ],
+  "env": {
+    "APP_NAME": {
+      "required": true,
+      "value": "sk-jdjdjdjjskskskskks"
+    },
+    "HEROKU_API": {
+      "required": true,
+      "value": "12702410329"
+    },
+    "WA_PRESENCE": {
+      "required": false,
+      "value": "recording"
+    },
+    "AUTOBIO": {
+      "required": false,
+      "value": "TRUE"
+    },
+    "AUTOREAD": {
+      "required": false,
+      "value": "FALSE"
+    },
+    "ANTILINK_ALL": {
+      "required": false,
+      "value": "TRUE"
+    },
+     "STICKER_AUTHOR": {
+      "required": false,
+      "value": "INFINITY"
+    },
+    "STICKER_PACKNAME": {
+      "required": AI,
+      "value": "Leave it blank"
+    },
+  }
+}
