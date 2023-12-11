@@ -797,10 +797,6 @@ break;
  m.reply('Promoted To Admin<🥇'); 
           }
 break;
-case "ping": case "speed": { 
-         m.reply (`*Pong!!*\n*${infinityspeed.toFixed(4)} milliseconds*`); 
-         } 
- break; 
      
 
  case "runtime": { 
@@ -998,7 +994,7 @@ case 'porno': case 'porn': case 'bokep': {
                 m.reply('Private Mode Successfully Activated')
             }
             break
-            case 'pong': case 'botstatus': case 'statusbot': {
+            case 'ping': case 'system': case 'speed': {
                 let timestamp = speed()
                 let kresswelli = speed() - timestamp
                 neww = performance.now()
