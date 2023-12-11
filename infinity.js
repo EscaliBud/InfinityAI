@@ -862,7 +862,7 @@ break;
      
 
  case "ping": { 
-                 m.reply (`Pong\n ${infinityspeed.toFixed(4)} _microseconds_ _miliseconds_`) 
+                 m.reply (`Pong\n ${infinityspeed.toFixed(4)} _miliseconds_`) 
  } 
  break;
 
