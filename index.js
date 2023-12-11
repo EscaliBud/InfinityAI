@@ -18,6 +18,7 @@ const { Boom } = require("@hapi/boom");
 const fs = require("fs");
 
 const axios = require("axios");
+const { smsg, isUrl, generateMessageTag } = require('./lib/myfunc')
 const chalk = require("chalk");
 const figlet = require("figlet");
 const _ = require("lodash");
