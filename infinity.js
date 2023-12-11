@@ -223,8 +223,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥ Repo : https://github.com/EscaliBud/InfinityAI*
 *┃➥ Library : Baileys*
 *┃➥ Bot Name : InfinityAI*
-*┃➥ Whatsapp Bot Ver : 2.12.0*
-*┃➥ Creator : Kresswell*
+*┃➥ Bot Version : 1.0.0*
+*┃➥ Creator : 𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟*
 *┗━──────────────*
 
 *⌜ Owner Commands ⌟*
