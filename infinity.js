@@ -215,7 +215,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
     if (isCmd2) {
       switch (command) {
         case "help": case "menu": case "start": case "info":
-        let caption: `
+        let caption =`
 
 
 *┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
@@ -274,10 +274,10 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Ytmp3*
 *┃➥Ytvideo*
 *┗━───────────────╯*
-`,
+`;
 
 client.sendMessage(m.chat, {
-                        text: cap,
+                        text: caption,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
