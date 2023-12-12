@@ -166,8 +166,8 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
             m.reply({
             '-3': 'Game telah berakhir',
             '-2': 'Invalid',
-            '-1': 'Posisi Invalid',
-            0: 'Posisi Invalid',
+            '-1': 'Invalid Position',
+            0: 'Invalid Position',
             }[ok])
             return !0
             }
@@ -206,8 +206,8 @@ ${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Gilira
 Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-            if (room.x !== room.o) await hisoka.sendText(room.x, str, m, { mentions: parseMention(str) } )
-            await hisoka.sendText(room.o, str, m, { mentions: parseMention(str) } )
+            if (room.x !== room.o) await client.sendText(room.x, str, m, { mentions: parseMention(str) } )
+            await client.sendText(room.o, str, m, { mentions: parseMention(str) } )
             if (isTie || isWin) {
             delete this.game[room.id]
             }
