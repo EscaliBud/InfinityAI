@@ -1079,6 +1079,15 @@ await m.reply('Successfully removed!');
 
   break;
 
+case 'add': {
+                if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+                let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+                await client.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+        }
+        break;
+
           case "invite": case "link": { 
                  if (!m.isGroup) throw group; 
                  if (!isBotAdmin) throw botAdmin; 
@@ -1329,6 +1338,20 @@ Type *surrender* to give up and admit defeat`
             }
             break;
 //extra commands
+case 'tourl': {
+                m.reply(mess.wait)
+                let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+                let media = await client.downloadAndSaveMediaMessage(quoted)
+                if (/image/.test(mime)) {
+                    let anu = await TelegraPh(media)
+                    m.reply(util.format(anu))
+                } else if (!/image/.test(mime)) {
+                    let anu = await UploadFileUgu(media)
+                    m.reply(util.format(anu))
+                }
+                await fs.unlinkSync(media)
+            }
+            break;
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break
