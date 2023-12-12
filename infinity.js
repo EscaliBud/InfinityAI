@@ -895,7 +895,7 @@ break;
              let txt = `*➥INFINITYAI BROADCAST*:\n\n*MESSAGE*:  _${text}_\n\n*Author*: ${pushname}` 
              await client.sendMessage(i, { 
                  image: { 
-                     url: "https://telegra.ph/file/c75efecf7f0aef851fc02.jpg" 
+                     url: "https://te.legra.ph/file/5b3c55eb8f214b2006c06.jpg" 
                  }, 
                  caption: `${txt}` 
              }) 
