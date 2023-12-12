@@ -322,6 +322,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Gdesc*
 *┃➥delete*
 *┃➥Listonline*
+*┃➥Add*
 *┗━──────────────╯*
 
 
@@ -348,6 +349,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Toimg*
 *┃➥Smeme*
 *┃➥Tourl*
+*┃➥Google*
 *┗━───────────────╯*
 
 *⌜ Gaming Menu⌟*
