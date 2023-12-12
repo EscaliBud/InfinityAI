@@ -281,8 +281,6 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
       switch (command) {
         case "help": case "menu": case "start": case "info":
         let caption =`
-
-
 *┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
 *┃*
 *┃➥ Repo : https://github.com/EscaliBud/InfinityAI*
@@ -348,6 +346,12 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Sticker*
 *┃➥Toimg*
 *┃➥Smeme*
+*┗━───────────────╯*
+
+*⌜ Gaming Menu⌟*
+
+*┏━───────────────╮*
+*┃➥ttt*
 *┗━───────────────╯*
 `;
 
