@@ -148,15 +148,7 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
             }
         })
 
-        // Public & Self
-
-        if (!infinity.public) {
-            if (!m.key.fromMe) return
-        }
-        if (m.message) {
-          client.sendReadReceipt(m.chat, m.sender, [m.key.id])
-            console.log(chalk.black(chalk.bgWhite('[ PESAN ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> Dari'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> Di'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
-        }
+        
         
         //TicTacToe
             this.game = this.game ? this.game : {}
@@ -501,18 +493,7 @@ break;
           }
         }
 break;
-            case 'public': {
-                if (!isCreator) throw mess.owner
-               infinity.public = true
-                m.reply('Sukse Change To Public Usage')
-            }
-            break
-            case 'private': {
-                if (!isCreator) throw mess.owner
-                infinity.public = false
-                m.reply('Sukses Change To Self Usage')
-            }
-            break
+            
 //download commands
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
