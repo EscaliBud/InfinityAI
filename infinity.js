@@ -1414,6 +1414,9 @@ case 'rate':
 client.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
 
                                         break;
+case '${prefix}':
+   m.reply("Hello there ${m.pushName} ,You have used my prefix.\n\n Type ${prefix} menu for my full command list.");
+break;
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break;
