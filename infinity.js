@@ -150,9 +150,9 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
 
         // Public & Self
 
-        /*if (!hisoka.public) {
+        if !muiruri.public) {
             if (!m.key.fromMe) return
-        }*/
+        }
         
         //TicTacToe
             this.game = this.game ? this.game : {}
@@ -497,7 +497,18 @@ break;
           }
         }
 break;
-
+            case 'public': {
+                if (!isCreator) throw mess.owner
+               muiruri.public = true
+                m.reply('Sukse Change To Public Usage')
+            }
+            break
+            case 'private': {
+                if (!isCreator) throw mess.owner
+                muiruri.public = false
+                m.reply('Sukses Change To Self Usage')
+            }
+            break
 //download commands
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
