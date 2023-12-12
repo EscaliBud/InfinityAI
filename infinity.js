@@ -352,10 +352,13 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Google*
 *┗━───────────────╯*
 
-*⌜ Gaming Menu⌟*
+*⌜ Fun Menu⌟*
 
 *┏━───────────────╮*
 *┃➥ttt*
+*┃➥Checkdeath*
+*┃➥Rate*
+*┃➥When*
 *┗━───────────────╯*
 `;
 
