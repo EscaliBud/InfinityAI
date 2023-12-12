@@ -150,7 +150,7 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
 
         // Public & Self
 
-        if (!muiruri.public) {
+        if (!infinity.public) {
             if (!m.key.fromMe) return
         }
         
@@ -499,13 +499,13 @@ break;
 break;
             case 'public': {
                 if (!isCreator) throw mess.owner
-               muiruri.public = true
+               infinity.public = true
                 m.reply('Sukse Change To Public Usage')
             }
             break
             case 'private': {
                 if (!isCreator) throw mess.owner
-                muiruri.public = false
+                infinity.public = false
                 m.reply('Sukses Change To Self Usage')
             }
             break
