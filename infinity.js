@@ -876,7 +876,7 @@ break;
              return; 
          } 
          if (!text) { 
-             reply("❌ No broadcast message provided!") 
+             reply("*❌ No broadcast message provided!*") 
              return; 
          } 
          let getGroups = await client.groupFetchAllParticipating() 
@@ -886,26 +886,15 @@ break;
          let res = groups.map(v => v.id) 
          reply(` Broadcasting in ${res.length} Group Chat, in ${res.length * 1.5} seconds`) 
          for (let i of res) { 
-             let txt = `*➥INFINITY AI BROADCAST*:\n\n ${text}\n\n*Cast By*: ${pushname}` 
- await client.sendMessage(m.chat, {
-                        text: txt,
-                        contextInfo: {
-                            externalAdReply: {
-                                showAdAttribution: true,
-                                title: `INFINITY-AI`,
-                                body: `Ni God Manzee◇.`,
-                                thumbnail: fs.readFileSync('./dreaded.jpg'),
-                                sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
-                                mediaType: 1,
-                                renderLargerThumbnail: true
-                            }
-                        }
-                    }, {
-                        quoted: m
-                    })
-           
+             let txt = `*➥INFINITYAI BROADCAST*:\n\n*MESSAGE*:  _${text}_\n\n*Author*: ${pushname}` 
+             await client.sendMessage(i, { 
+                 image: { 
+                     url: "https://telegra.ph/file/c75efecf7f0aef851fc02.jpg" 
+                 }, 
+                 caption: `${txt}` 
+             }) 
          } 
-         //reply(`Broadcasted to ${res.length} Groups.`) 
+         reply(`Broadcasted to ${res.length} Groups.`) 
      } 
  break;
           case "leave": { 
