@@ -1339,7 +1339,7 @@ Type *surrender* to give up and admit defeat`
             break;
 //extra commands
 case 'tourl': {
-                m.reply(mess.wait)
+                m.reply('Please wait...')
                 let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await client.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
