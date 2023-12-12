@@ -236,6 +236,9 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Setvar*
 *┃➥Getvar*
 *┃➥Restart*
+*┃➥BotPp*
+*┃➥Broadcast*
+
 *┗━───────────────╯*
 
 *⌜ Admin Commands ⌟*
@@ -250,7 +253,10 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Hidetag*
 *┃➥Tagall*
 *┃➥Kick*
-*┗━───────────────╯*
+*┃➥Subject*
+*┃➥Gdesc*
+*┃➥delete*
+*┗━──────────────╯*
 
 
 *⌜ Utilities ⌟*
