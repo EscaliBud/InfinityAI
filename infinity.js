@@ -256,6 +256,23 @@ if (autobio === 'TRUE'){
                          }, 10 * 1000) 
 
 }
+
+    if (antilink === 'TRUE' && body.includes('chat.whatsapp.com') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
+
+ kid = m.sender; 
+
+ client.sendMessage(m.chat, { 
+
+                delete: { 
+                   remoteJid: m.chat, 
+                   fromMe: false, 
+                   id: m.key.id, 
+                   participant: kid 
+                } 
+             }).then(() => client.groupParticipantsUpdate(m.chat, [kid], 'remove')); 
+ client.sendMessage(m.chat, {text:`Removed:\n\n@${kid.split("@")[0]}, sending group links is not allowed here!`, contextInfo:{mentionedJid:[kid]}}, {quoted:m}); 
+       }   
+
 if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !Owner && isBotAdmin && !isAdmin && m.isGroup) { 
 
  ki = m.sender; 
@@ -269,14 +286,17 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
                    participant: ki
                 } 
              }).then(() => client.groupParticipantsUpdate(m.chat, [ki], 'remove')); 
- client.sendMessage(m.chat, {text:`Hello there \n\n@${ki.split("@")[0]}, sending links is not allowed here!!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
+ client.sendMessage(m.chat, {text:`Removed:\n\n@${ki.split("@")[0]}, sending links is not allowed here!`, contextInfo:{mentionedJid:[ki]}}, {quoted:m}); 
        }   
 
-    if (isCmd2 && !m.isGroup) {
-      console.log(chalk.black(chalk.bgWhite("[ LOGS ]")), color(argsLog, "turquoise"), chalk.magenta("From"), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace("@s.whatsapp.net", "")} ]`));
-    } else if (isCmd2 && m.isGroup) {
+
+
+
+    if (cmd && !m.isGroup) {
+      console.log(chalk.black(chalk.bgWhite("[ INFINITY-AI ]")), color(argsLog, "turquoise"), chalk.magenta("From"), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace("@s.whatsapp.net", "")} ]`));
+    } else if (cmd && m.isGroup) {
       console.log(
-        chalk.black(chalk.bgWhite("[ IHK ]")),
+        chalk.black(chalk.bgWhite("[ LOGS ]")),
         color(argsLog, "turquoise"),
         chalk.magenta("From"),
         chalk.green(pushname),
@@ -284,7 +304,9 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
         chalk.blueBright("IN"),
         chalk.green(groupName)
       );
-    }
+    }   
+
+    
 
     if (isCmd2) {
       switch (command) {
