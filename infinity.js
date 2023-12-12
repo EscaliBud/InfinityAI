@@ -351,6 +351,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Sticker*
 *┃➥Toimg*
 *┃➥Smeme*
+*┃➥Tourl*
 *┗━───────────────╯*
 
 *⌜ Gaming Menu⌟*
