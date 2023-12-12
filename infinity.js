@@ -1078,7 +1078,7 @@ await m.reply('Successfully removed!');
 
 case 'add': {
                 if (!m.isGroup) throw group
-                if (!isBotAdmins) throw botAdmin
+                if (!isBotAdmin) throw botAdmin
                 if (!isAdmin) throw admin
                 let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
                 await client.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
