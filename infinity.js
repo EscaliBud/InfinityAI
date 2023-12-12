@@ -1259,8 +1259,8 @@ ${arr.slice(6).join('')}
 Menunggu @${room.game.currentTurn.split('@')[0]}
 
 Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
-            if (room.x !== room.o) await hisoka.sendText(room.x, str, m, { mentions: parseMention(str) } )
-            await hisoka.sendText(room.o, str, m, { mentions: parseMention(str) } )
+            if (room.x !== room.o) await client.sendText(room.x, str, m, { mentions: parseMention(str) } )
+            await client.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
             room = {
             id: 'tictactoe-' + (+new Date),
@@ -1280,7 +1280,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             try {
             if (this.game) {
             delete this.game
-            hisoka.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
+            client.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
             } else if (!this.game) {
             m.reply(`Session TicTacToe🎮 tidak ada`)
             } else throw '?'
