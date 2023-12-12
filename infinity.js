@@ -150,7 +150,7 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
 
         // Public & Self
 
-        if !muiruri.public) {
+        if (!muiruri.public) {
             if (!m.key.fromMe) return
         }
         
