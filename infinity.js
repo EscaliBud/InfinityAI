@@ -292,7 +292,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 
 
 
-    if (cmd && !m.isGroup) {
+    if (isCmd && !m.isGroup) {
       console.log(chalk.black(chalk.bgWhite("[ INFINITY-AI ]")), color(argsLog, "turquoise"), chalk.magenta("From"), chalk.green(pushname), chalk.yellow(`[ ${m.sender.replace("@s.whatsapp.net", "")} ]`));
     } else if (cmd && m.isGroup) {
       console.log(
