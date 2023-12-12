@@ -320,6 +320,11 @@ infinity(client, m, chatUpdate, store);
          await client.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted }); 
          return buffer 
      }; 
+
+client.sendTextWithMentions = async (jid, text, quoted, options = {}) => 
+client.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
+
+
 client.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => { 
          let types = await client.getFile(PATH, true) 
          let { filename, size, ext, mime, data } = types 
@@ -372,6 +377,7 @@ await client.connect({ timeoutMs: 30 * 1000 });
          return buffer 
       }; 
 
+    
  client.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => { 
          let quoted = message.msg ? message.msg : message; 
          let mime = (message.msg || message).mimetype || ''; 
