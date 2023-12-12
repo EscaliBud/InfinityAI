@@ -149,6 +149,11 @@ const admin = process.env.ADMIN_MSG || 'Admin Command Only';
         })
 
         // Public & Self
+
+        /*if (!hisoka.public) {
+            if (!m.key.fromMe) return
+        }*/
+
         //TicTacToe
             this.game = this.game ? this.game : {}
             let room = Object.values(this.game).find(room => room.id && room.game && room.state && room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender) && room.state == 'PLAYING')
