@@ -13,6 +13,7 @@ const OpenAI = require("openai");
 const os = require('os');
 const google =require('google-it');
 const Genius = require("genius-lyrics"); 
+let { TelegraPh, UploadFileUgu, webp2mp4File } = require('./lib/uploader');
 let setting = require("./key.json");
 const yts = require("yt-search");
 const ytdl = require("ytdl-core");
