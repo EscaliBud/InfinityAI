@@ -1228,7 +1228,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 case 'ttc': case 'ttt': case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
-            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
+            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game!!'
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
             m.reply('Partner ditemukan!')
@@ -1256,9 +1256,10 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Menunggu @${room.game.currentTurn.split('@')[0]}
+Current Player: @${room.game.currentTurn.split('@')[0]}
 
-Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
+
+Type *surrender* to give up and admit defeat`
             if (room.x !== room.o) await client.sendText(room.x, str, m, { mentions: parseMention(str) } )
             await client.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
@@ -1270,7 +1271,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             state: 'WAITING'
             }
             if (text) room.name = text
-            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''))
+            m.reply('Waiting for a patner.' + (text ? ` Type the following command: ${prefix}${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
@@ -1280,12 +1281,12 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             try {
             if (this.game) {
             delete this.game
-            client.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
+            client.sendText(m.chat, `Successfully deleted the TicTacToe Session`, m)
             } else if (!this.game) {
-            m.reply(`Session TicTacToe🎮 tidak ada`)
+            m.reply(`No active TicTacToe  session.`)
             } else throw '?'
             } catch (e) {
-            m.reply('rusak')
+            m.reply('Damaged💀')
             }
             }
             break;
