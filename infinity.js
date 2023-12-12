@@ -303,7 +303,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Restart*
 *┃➥BotPp*
 *┃➥Broadcast*
-
+*┃➥Listpc*
+*┃➥Listgc*
 *┗━───────────────╯*
 
 *⌜ Admin Commands ⌟*
@@ -321,6 +322,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Subject*
 *┃➥Gdesc*
 *┃➥delete*
+*┃➥Listonline*
 *┗━──────────────╯*
 
 
