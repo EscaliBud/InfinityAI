@@ -1054,7 +1054,14 @@ break;
                     + 'END:VCARD'
                 client.sendMessage(m.chat, { contacts: { displayName: 'Kresswell.', contacts: [{ vcard }] } }, { quoted: m })
             }
-            break
+            break;
+            case 'q': case 'quoted': {
+                if (!m.quoted) return reply('Reply to Message!!')
+                let wokwol = await client.serializeM(await m.getQuotedObj())
+                if (!wokwol.quoted) return reply('The Message You Replied To Does Not Contain A Reply')
+                await wokwol.quoted.copyNForward(m.chat, true)
+            }
+            break;
 case "remove": case "kick": { 
 try {
 
