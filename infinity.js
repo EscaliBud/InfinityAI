@@ -905,7 +905,7 @@ break;
                     })
            
          } 
-         reply(`Broadcasted to ${res.length} Groups.`) 
+         //reply(`Broadcasted to ${res.length} Groups.`) 
      } 
  break;
           case "leave": { 
