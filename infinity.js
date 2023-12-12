@@ -1349,6 +1349,20 @@ case 'tourl': {
                 await fs.unlinkSync(media)
             }
             break;
+case 'google': {
+                if (!text) return reply(`Example : ${prefix + command} Who is Kresswell`)
+                let google = require('google-it')
+                google({'query': text}).then(res => {
+                let teks = `Google Search Title : ${text}\n\n`
+                for (let g of res) {
+                teks += `🔍*Title* : ${g.title}\n`
+                teks += `📔 *Description* : ${g.snippet}\n`
+                teks += `🔗 *Link* : ${g.link}\n\n────────────────────────\n\n`
+                } 
+                reply(teks)
+                })
+                }
+                break;
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break
