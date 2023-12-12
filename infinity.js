@@ -22,6 +22,14 @@ const ytdl = require("ytdl-core");
 //const openai = new OpenAI({ apiKey: setting.keyopenai });
 const { Configuration, OpenAIApi } = require("openai");
 const { getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('./lib/myfunc')
+global.APIs = {
+        zenz: 'https://zenzapis.xyz',
+}
+
+//Api Key\\
+global.APIKeys = {
+        'https://zenzapis.xyz': 'ohok989412345', //credit goes to sanzy yt, if api key expire, buy it and put it here?\\
+}
 
 module.exports = infinity = async (client, m, chatUpdate, store) => {
   try {
@@ -758,6 +766,19 @@ case 'ytv':
             reply(e.toString())
         }
 break;
+            case 'style': case 'styletext': {
+                if (!text) return reply('You sent nothing') //wont response when limit runs out\\
+             
+                let { styletext } = require('./lib/scraper')
+                if (!text) return reply(`Enter Query Text!`)
+                let anu = await styletext(text)
+                let teks = `Entered Text ${text}\n\n`
+                for (let i of anu) {
+                    teks += `🔮 *${i.name}* : ${i.result}\n\n`
+                }
+                reply(teks)
+            }
+            break;
 
   case 'video':
         const getRandomm = (ext) => {
