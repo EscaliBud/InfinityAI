@@ -22,7 +22,7 @@ const ytdl = require("ytdl-core");
 const { Configuration, OpenAIApi } = require("openai");
 const { getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('./lib/myfunc')
 
-module.exports = infinity = async (client, m, chatUpdate) => {
+module.exports = infinity = async (client, m, chatUpdate, store) => {
   try {
     var body =
       m.mtype === "conversation"
