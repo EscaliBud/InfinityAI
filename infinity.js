@@ -389,6 +389,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Checkdeath*
 *┃➥Rate*
 *┃➥When*
+*┃➥Couple*
 *┗━───────────────╯*
 `;
 
