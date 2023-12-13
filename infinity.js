@@ -564,6 +564,14 @@ break;
 
 break;
 
+case 'couple': {
+                m.reply('Please Wait..')
+                let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                client.sendMessage(m.chat, { image: { url: random.male }, caption: `Male Couple` }, { quoted: m })
+                client.sendMessage(m.chat, { image: { url: random.female }, caption: `Female Couple` }, { quoted: m })
+            }
+            break;
                     case "sticker": case "s": { 
             if (/image/.test(mime)) { 
 
