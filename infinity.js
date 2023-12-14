@@ -531,6 +531,37 @@ break;
           }
         }
 break;
+case "take": {
+try {
+
+  if (!m.quoted) return reply('Quote a sticker!')
+  let fortunx = await client.getName(sender);
+
+  if (!/webp/.test(mime)) throw `Tag sticker with caption  ${prefix + command}`;
+  if (m.quoted.isAnimated === true) {
+  client.downloadAndSaveMediaMessage(quoted, "gifee");
+  client.sendMessage(m.chat, {sticker:fs.readFileSync("gifee.webp")},{quoted:m});
+  } else if (/image/.test(mime)) {
+  let mediax = await quoted.download();
+  let encmediax = await client.sendImageAsSticker(m.chat, mediax, m, { packname: Kresswell, author: Muiruri });
+  await fs.unlinkSync(encmediax);
+
+
+
+} else if (/video/.test(mime)) {
+  if ((quoted.msg || quoted).seconds > 11) return m.reply('Not long than 10 seconds!');
+  let mediaxx = await quoted.download();
+  let encmediaxx = await client.sendVideoAsSticker(m.chat, mediaxx, m, { packname: Kresswell, author: Muiruri });
+  await fs.unlinkSync(encmediaxx)
+  } else {
+  reply(`Send a sticker with caption ${prefix + command}`);
+  }
+
+} catch (errr) { 
+ await reply("Something went wrong! Looks like I am unable to convert animated stickers")}
+
+  }
+break;
             
 //download commands
 case 'tomp4': case 'tovideo': {
