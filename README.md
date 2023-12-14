@@ -2,7 +2,7 @@
 <h1><b>INFINITY HACK3RS KENYA</b></h1><br>
  <div align="center">
 <p align="center">
-        <img src="https://i.imgur.com/SiMhQ9z.jpg" width="200" style="margin-left: auto;margin-right: auto;display: block;">
+        <img src="https://telegra.ph/file/d5431d7fc2792dc14e7fc.jpg" width="200" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <h1 align="center">𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟ 🗿</h1>
 </p>
