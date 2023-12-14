@@ -33,6 +33,13 @@ const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream
 const color = (text, color) => {
   return !color ? chalk.green(text) : chalk.keyword(color)(text);
 };
+async function connectionLogic() {
+  const mongoClient = new MongoClient(mongoURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  await mongoClient.connect();
+
 
 function smsg(conn, m, store) {
   if (!m) return m;
