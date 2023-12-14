@@ -1060,7 +1060,12 @@ break;
    ); 
    fs.unlinkSync(`./${randomName}`); 
     } 
-//other commands
+//other commands    
+            case 'stats':
+                if (!isOwner && !itsMe) return await reply('This command only for owner or mega')
+                texxt = await msg.stats(totalChat)
+                await wa.sendFakeStatus(from, texxt, "BOT STATS")
+                break;
           case "subject": case "changesubject": { 
                  if (!m.isGroup) throw group; 
                  if (!isBotAdmin) throw botAdmin; 
