@@ -15,6 +15,10 @@ const {
   fetchLatestWaWebVersion
 } = require("@whiskeysockets/baileys");
 const pino = require("pino");
+const useMongoDBAuthState = require("./mongoAuthState");
+const mongoURL = "mongodb+srv://Saif:Arhaan123@cluster0.mj6hd.mongodb.net";
+const { MongoClient } = require("mongodb");
+
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/kressexif'); 
