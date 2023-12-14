@@ -1062,7 +1062,7 @@ break;
     } 
 //other commands  
 case 'imagetag':
-                if (!isGroup) return await reply('this command only for group')
+                if (!m.isGroup) return await reply('this command only for group')
                 if (!isAdmin && !Owner && !itsMe) return await reply('this command only for admin, baka!')
                 if (!isQuotedImage && !isImage) return await reply(`Send image, and reply with caption ${prefix}imagetag`)
                 media = isQuotedImage ? JSON.parse(JSON.stringify(lin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lin
