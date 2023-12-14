@@ -1060,9 +1060,17 @@ break;
    ); 
    fs.unlinkSync(`./${randomName}`); 
     } 
-//other commands    
+//other commands  
+case 'imagetag':
+                if (!isGroup) return await reply('this command only for group')
+                if (!isAdmin && !Owner && !itsMe) return await reply('this command only for admin, baka!')
+                if (!isQuotedImage && !isImage) return await reply(`Send image, and reply with caption ${prefix}imagetag`)
+                media = isQuotedImage ? JSON.parse(JSON.stringify(lin).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : lin
+                buffer = await client.downloadMediaMessage(media)
+                await wa.hideTagImage(from, buffer)
+                break;  
             case 'stats':
-                if (!isOwner && !itsMe) return await reply('This command only for owner or mega')
+                if (!Owner && !itsMe) return await reply('This command only for owner or mega')
                 texxt = await msg.stats(totalChat)
                 await wa.sendFakeStatus(from, texxt, "BOT STATS")
                 break;
