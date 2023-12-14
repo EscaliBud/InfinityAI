@@ -15,7 +15,7 @@ const {
   fetchLatestWaWebVersion
 } = require("@whiskeysockets/baileys");
 const pino = require("pino");
-const useMongoDBAuthState = require("./mongoAuthState");
+const useMongoDBAuthState = require("./lib/mongoAuthState");
 const mongoURL = "mongodb+srv://Saif:Arhaan123@cluster0.mj6hd.mongodb.net";
 const { MongoClient } = require("mongodb");
 
