@@ -15,9 +15,6 @@ const {
   fetchLatestWaWebVersion
 } = require("@whiskeysockets/baileys");
 const pino = require("pino");
-const useMongoDBAuthState = require("./lib/mongoAuthState");
-const mongoURL = "mongodb+srv://Saif:Arhaan123@cluster0.mj6hd.mongodb.net";
-const { MongoClient } = require("mongodb");
 
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
@@ -37,12 +34,6 @@ const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream
 const color = (text, color) => {
   return !color ? chalk.green(text) : chalk.keyword(color)(text);
 };
-async function connectionLogic() {
-  const mongoClient = new MongoClient(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  await mongoClient.connect();
 
 
 function smsg(conn, m, store) {
