@@ -1338,6 +1338,30 @@ case 'restart':
  m.reply (`Unblocked!`); 
  } 
  break;
+  case 'quotely': {
+try {
+if (!m.quoted.text) throw 'Tag a text';
+let xf = m.quoted.text;
+
+                const {
+                    quote
+                } = require('./lib/infinityquotely.js')
+
+                let pppuser = await client.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/75272825615a4dcb69526.png')
+
+const rel = await quote(xf, pushname, pppuser)
+
+                client.sendImageAsSticker(m.chat, rel.result, m, {
+                    packname: pushname,
+                    author: `InfinityAI`
+                })
+
+} catch (errr) { 
+ await reply("Tag some text for quotely")}
+
+            }
+
+break;
 case "getvar": 
  if (!Owner) throw NotOwner;  
      const heroku = new Heroku({  
