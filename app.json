@@ -1,6 +1,7 @@
 {
         "name": "InfinityAI",
         "description": "InfinityAI-By-Kresswell",
+  "logo": "https://telegra.ph/file/7017924cb0895477400e3.jpg",
         "keywords": [],
         "stack": "container",
         "env":{
