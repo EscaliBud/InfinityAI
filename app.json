@@ -14,6 +14,17 @@
             "description": "Exact name which you gave at the top",
             "required": true,
             "value":""
-        }
+        },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ]
         }
 }
