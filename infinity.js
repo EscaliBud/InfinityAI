@@ -306,8 +306,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
         case "help": case "menu": case "start": case "info":
         let caption =`
 *┏━──●▬▬▬▬๑۩ 𓄂ᴋʀᴇͥsͣsͫᴡᴇʟʟ ۩๑▬▬▬▬▬●*
-*┃*
-*┃➥ Repo : https://github.com/EscaliBud/InfinityAI*
+*┃➥Hello ${m.pushName} ,*
+*┃➥ Runtime: ${runtime(process.uptime())}*
 *┃➥ Library : Baileys*
 *┃➥ Bot Name : InfinityAI*
 *┃➥ Bot Version : 1.0.0*
@@ -820,7 +820,37 @@ case 'yta': {
         }
     }
 
-break  
+break;
+case '':
+        if(isCmd2){
+        client.sendMessage(from, { react: { text: "✨" , key: m.key }})
+
+     reply(`Hello ${pushname} ,You used my prefix.Please  Type *${prefix}help* to get my full command list.`)
+        }
+
+    break;
+case 'ghstalk': case 'githubstalk': case'github': {
+  client.sendMessage(from, { react: { text: "🔍" , key: m.key }})
+
+  if (!q) return replay(`Give me a user name like *${prefix}github EscaliBud*`)
+
+  gitdata = await githubstalk.githubstalk(`${q}`)
+  client.sendMessage(m.chat, { image: { url : gitdata.profile_pic }, caption: 
+  `*ㅤㅤㅤ|ㅤㅤㅤGithub Info ㅤㅤㅤ|\*
+
+  🚩 Id : ${gitdata.id}
+  🔖 Nickname : ${gitdata.nickname}
+  🔖 Username : ${gitdata.username}
+  ✨ Bio : ${gitdata.bio}
+  🏢 Company : ${gitdata.company}
+  📍 Location : ${gitdata.location}
+  📧 Email : ${gitdata.email}
+  🔓 Public Repo : ${gitdata.public_repo}
+  🔐 Public Gists : ${gitdata.public_gists}
+  💕 Followers : ${gitdata.followers}
+  👉 Following : ${gitdata.following}` }, { quoted: m } )
+  }
+  break;  
 case 'ytmp4':
 case 'ytvideo':
 case 'ytv':
