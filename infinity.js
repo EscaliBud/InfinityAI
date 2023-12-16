@@ -19,6 +19,7 @@ let setting = require("./key.json");
 const yts = require("yt-search");
 const modapk = require("tod-api");
 const ytdl = require("ytdl-core");
+const githubstalk = require('./lib/githubstalk');
  const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oNa9-hsrLxQV5l5FiAZO"); // Scrapes if no key is provided
 //const openai = new OpenAI({ apiKey: setting.keyopenai });
 const { Configuration, OpenAIApi } = require("openai");
