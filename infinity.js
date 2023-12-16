@@ -17,6 +17,7 @@ const Genius = require("genius-lyrics");
 let { TelegraPh, UploadFileUgu, webp2mp4File } = require('./lib/uploader');
 let setting = require("./key.json");
 const yts = require("yt-search");
+const modapk = require("tod-api");
 const ytdl = require("ytdl-core");
  const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oNa9-hsrLxQV5l5FiAZO"); // Scrapes if no key is provided
 //const openai = new OpenAI({ apiKey: setting.keyopenai });
@@ -851,6 +852,34 @@ case 'ghstalk': case 'githubstalk': case'github': {
   👉 Following : ${gitdata.following}` }, { quoted: m } )
   }
   break;  
+case 'happymod': case 'modapk':{
+  if (isBan) return reply(mess.banned);
+  if (isBanChat) return reply(mess.bangc);
+  client.sendMessage(from, { react: { text: "🔍" , key: m.key }});
+
+  if (!args.join(" ")) return reply(`Example: ${prefix + command} Kinemaster`);
+
+  const searchTerm = args.join(" ");
+ modapk.happymod(searchTerm).then(async (res) => {
+    let teks = '```「 HappyMod Search Engine 」```';
+    for (let i of res) {
+      teks += `\n\n${i.name}\n`;
+      teks += `${i.link}`;
+    }
+
+    let messageToSend = teks;
+    if (res[0].icon) {
+      messageToSend = {
+        text: teks,
+        image: { url: res[0].icon },
+        jpegThumbnail: Thumb,
+      };
+    }
+
+    client.sendMessage(from, messageToSend, { quoted: m });
+  });
+}
+break;
 case 'ytmp4':
 case 'ytvideo':
 case 'ytv':
