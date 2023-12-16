@@ -377,6 +377,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Google*
 *┃➥Quotely*
 *┃➥Movie*
+*┃➥Github*
 *┗━───────────────╯*
 
 *⌜ Fun Menu⌟*
@@ -854,8 +855,6 @@ case 'ghstalk': case 'githubstalk': case'github': {
   }
   break;  
 case 'happymod': case 'modapk':{
-  if (isBan) return reply(mess.banned);
-  if (isBanChat) return reply(mess.bangc);
   client.sendMessage(from, { react: { text: "🔍" , key: m.key }});
 
   if (!args.join(" ")) return reply(`Example: ${prefix + command} Kinemaster`);
