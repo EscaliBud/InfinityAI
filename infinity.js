@@ -1668,7 +1668,26 @@ client.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m
           case "sc": case "script": case "scbot":
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break;
+case "checks":
+m.reply("*⌜ Checks Menu ⌟*
 
+*┏━───────────────╮*
+*┃➥Charactercheck*
+*┃➥LesbianCheck*
+*┃➥Gaycheck*
+*┃➥Awesomecheck*
+*┃➥Greatcheck*
+*┃➥Hornycheck*
+*┃➥Prettycheck*
+*┃➥Cutecheck*
+*┃➥Uglycheck*
+*┃➥Lovelycheck*
+*┃➥Beautifulcheck*
+*┃➥Handsomecheck*
+*┗━───────────────╯*
+
+Bot By @𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟ ");
+break;
       
      
 case 'thunder': case 'christmas': case '3dchristmas': case 'sparklechristmas':
