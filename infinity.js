@@ -1669,7 +1669,7 @@ client.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m
            m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
           break;
 case "checks":
-m.reply("*⌜ Checks Menu ⌟*
+let mcheks= `*⌜ Checks Menu ⌟*
 
 *┏━───────────────╮*
 *┃➥Charactercheck*
@@ -1686,8 +1686,24 @@ m.reply("*⌜ Checks Menu ⌟*
 *┃➥Handsomecheck*
 *┗━───────────────╯*
 
-Bot By @𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟ ");
-break;
+Bot By @𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟ `;
+client.sendMessage(m.chat, {
+                        text: mcheks,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `INFINITY-AI`,
+                                body: `Ni God Manzee!! ◇.`,
+                                thumbnail: fs.readFileSync('./infinity.jpg'),
+                                sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m
+                    })
+          break;
       
      
 case 'thunder': case 'christmas': case '3dchristmas': case 'sparklechristmas':
