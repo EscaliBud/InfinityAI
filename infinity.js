@@ -388,6 +388,13 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Rate*
 *┃➥When*
 *┃➥Couple*
+*┃➥Soulmate*
+*┃➥Truth*
+*┃➥Dare*
+*┃➥Checks*
+*┃➥Anime*
+*┃➥Manga* 
+*┃➥Movie*
 *┗━───────────────╯*
 `;
 
