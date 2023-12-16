@@ -1,87 +1,18 @@
 {
-  "name": "InfinityAI",
-  "description": "This is a simple whatsapp bot built with nodejs and baileys with MD support.",
-  "keywords": [
-    "bot",
-    "whatsapp",
-    "InfinityAI",
-    "whatsapp-stickers",
-    "anime",
-    "whatsapp-bot",
-    "whatsapp-sticker-bot",
-    "whatsapp-botto",
-    "baileys",
-    "baileys-md",
-    "md-bot"
-  ],
-  "website": "https://github.com/EscaliBud/InfinityAI#readme",
-  "repository": "https://github.com/EscaliBu/InfinityAI.git",
-  "logo": "https://telegra.ph/file/d5431d7fc2792dc14e7fc.jpg",
-  "success_url": "/",
-  "env": {
-    "PREFIX": {
-      "description": "Prefix for InfinityAI Ex: . , / , # , & etc. Put any symbol",
-      "required": true
-
-    },
-   
-    
-      "AUTOREAD": {
-      "description": "Put here TRUE if you want bot to automatically bluetick messages in private chats",
-      "required": true
-},
- "AUTOVIEW": {
-      "description": "Input true if you want bot to automatically read status update",
-      "required": false
-},
- "WA_PRESENCE": {
-      "description": "Input either recording or typing. This enables bot to simulate typing or recording.",
-      "required": false
-},
- "ANTILINK": {
-      "description": "Input TRUE if you want bot to kick link senders",
-      "required": false
-},
- "ANTILINK_ALL": {
-      "description": "Input TRUE if you want bot to kick users sending any links.",
-      "required": false
-},
- "AUTOBIO": {
-      "description": "Input TRUE if you want bot to autoupdate its about with current time and date.",
-      "required": false
-},
- "APP_NAME": {
-      "description": "Input your app name that you put above.",
-      "required": true
-},
-"HEROKU_API":{
-  "description": "Your Heroku account api key.",
-   "required": true
-},
- "STICKER_AUTHOR": {
-      "description": "Input sticker data for author",
-      "required": false
-},
- "STICKER_PACKNAME": {
-      "description": "Input sticker data for packname",
-      "required": false
-},
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    }
-  ]
-    }
-"formation": {
-                "worker": {
-                        "quantity": 1,
-                        "size": "basic"
-                }
-              }
-           }
+        "name": "InfinityAI",
+        "description": "InfinityAI-By-Kresswell",
+        "keywords": [],
+        "stack": "container",
+        "env":{
+       "HEROKU_API": {
+            "description": "For updating bot and setting vars remotely",
+            "required": true,
+            "value":""
+        },
+        "APP_NAME": {
+            "description": "Exact name which you gave at the top",
+            "required": true,
+            "value":""
+        }
+        }
+}
