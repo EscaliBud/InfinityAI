@@ -1679,7 +1679,7 @@ case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwate
 case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': case 'joker': case 'wicker':
 case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': {
 
-if (!q) return reply(`Example : ${prefix + command} ${global.OwnerName}`)
+if (!text) return reply(`Example : ${prefix + command} Kresswell`)
 client.sendMessage(from, { react: { text: "🪄" , key: m.key }}) 
 reply('Please wait..')        
 
