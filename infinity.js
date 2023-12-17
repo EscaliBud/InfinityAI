@@ -2114,7 +2114,7 @@ let srh = await manga.searchManga(q)
   if (srh.data[0].background !== null)
     mang += `*Background:* ${srh.data[0].background}`;
   mang += `*Description:* ${srh.data[0].synopsis.replace(
-    /\[Written by MAL Rewrite]/g,
+    /\[By InfinityAI]/g,
     ""
   )}`;
 client.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
@@ -2123,7 +2123,7 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
  
   client.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
-  if (!args[0]) return reply("Please give me a text so that i can speak it!")
+  if (!text) return reply("Please give me a text so that i can speak it!")
 
     let texttosay = text
       ? text
