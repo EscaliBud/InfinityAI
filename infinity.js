@@ -1,4 +1,4 @@
-
+p
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require("@whiskeysockets/baileys");
 const fs = require("fs");
 const util = require("util");
@@ -1791,7 +1791,7 @@ if(!text) return reply("Please enter any text to translate")
 tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
 Infoo = tes.info
 Detek = tes.translate
-replay(`Input : ${Detek}\nTranslation : ${Infoo}`)
+reply(`Input : ${Detek}\nTranslation : ${Infoo}`)
 }
 break;
 case 'soulmate':  {
