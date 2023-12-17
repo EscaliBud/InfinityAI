@@ -2211,7 +2211,7 @@ case "xnxxdl": {
             let xn = await fg.xnxxdl(text)
 client.sendMessage(m.chat, { caption: `≡  *XNXX DL*
         
-▢ *📌Title*: ${xn.result.title}
+//▢ *📌Title*: ${xn.result.title}
 ▢ *⌚Duration:* ${xn.result.duration}
 ▢ *🎞️Quality:* ${xn.result.quality}`, video: {url: xn.result.files.high} }, { quoted: m })
 }
