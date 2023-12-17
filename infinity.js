@@ -658,7 +658,7 @@ case 'tomp4': case 'tovideo': {
 
 break;
 case 'status': case 'post': {
-  if (!isOwner) return replay('Are you the owner bitch??')
+  if (!Owner) return replay('Are you the owner bitch??')
   if (!quoted) return reply(`Send/Reply Image With Caption ${prefix}status`)
   if (/video/.test(mime)) {
       if ((quoted.msg || quoted).seconds > 30) return reply('Maximum 30 seconds video is allowed!')
