@@ -1789,8 +1789,8 @@ client.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 if(!text) return reply("Please enter any text to translate")
 let tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
-Infoo = tes.info
-Detek = tes.translate
+let Infoo = tes.info
+let Detek = tes.translate
 reply(`Input : ${Detek}\nTranslation : ${Infoo}`)
 }
 break;
