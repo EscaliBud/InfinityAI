@@ -2219,7 +2219,7 @@ break;
 case 'xnxxsearch': {
         
         if (!m.isGroup) return reply('Group command')
-        if (!text) return replygcxeon(`Enter Query`)
+        if (!text) return reply(`Enter Query`)
         reply('Please wait')
         const fg = require('api-dylux')
         let res = await fg.xnxxSearch(text)
