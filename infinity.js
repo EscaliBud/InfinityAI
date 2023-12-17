@@ -2119,7 +2119,22 @@ let srh = await manga.searchManga(q)
   )}`;
 client.sendMessage(m.chat,{image:{url:srh.data[0].images.jpg.large_image_url},caption:mang},{quoted:m})   
 break;
+case "tts":  case "texttospeech":  case "say": case "speak":{
+ 
+  client.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
+  if (!args[0]) return reply("Please give me a text so that i can speak it!")
+
+    let texttosay = text
+      ? text
+      : m.quoted && m.quoted.text
+      ? m.quoted.text
+      : m.text;
+    const SpeakEngine = require("google-tts-api"); 
+    const texttospeechurl = SpeakEngine.getAudioUrl(texttosay, {lang: "en", slow: false, host: "https://translate.google.com",});
+    client.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `infinitytrt.mp3`,},{quoted: m,});
+  }
+  break;
 
 
         default: {
