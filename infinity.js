@@ -1788,7 +1788,7 @@ case 'translate': case 'trt': case 'trans': {
 client.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 
 if(!text) return reply("Please enter any text to translate")
-tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
+let tes = await fetchJson (`https://megayaa.herokuapp.com/api/translate?to=en&kata=${args.join(" ")}`)
 Infoo = tes.info
 Detek = tes.translate
 reply(`Input : ${Detek}\nTranslation : ${Infoo}`)
