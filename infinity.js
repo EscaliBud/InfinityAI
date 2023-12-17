@@ -1779,7 +1779,7 @@ reply('Please wait..')
        if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
        if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
        if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
-       let anu = await maker.textpro(link, q)
+       let anu = await maker.textpro(link, text)
           client.sendMessage(m.chat, { image: { url: anu }, caption: `Made by InfinityAI` }, { quoted: m })
        }
 
