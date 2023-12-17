@@ -311,6 +311,8 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Hello ${m.pushName} ,*
 *┃➥ Runtime: ${runtime(process.uptime())}*
 *┃➥ Library : Baileys*
+*┃➥ Host Name : ${os.hostname()}*
+*┃➥ Platform : ${os.platform()}*
 *┃➥ Bot Name : InfinityAI*
 *┃➥ Bot Version : 1.0.0*
 *┃➥ Creator : 𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟*
