@@ -657,6 +657,45 @@ case 'tomp4': case 'tovideo': {
             }
 
 break;
+case 'status': case 'post': {
+  if (!isCreator) return replay('Are you the owner bitch??')
+  if (!quoted) return reply(`Send/Reply Image With Caption ${prefix}status`)
+  if (/video/.test(mime)) {
+      if ((quoted.msg || quoted).seconds > 30) return reply('Maximum 30 seconds video is allowed!')
+  }
+  const messageType = Object.keys (m.message)[0]
+  if (messageType === 'imageMessage') {
+      const media = await downloadMediaMessage(m,'media',{ },{ logger,reuploadRequest: sock.updateMediaMessage})
+      await writeFile('./image.jpeg', media)
+      await client.sendMessage(botNumber, 'status@broadcast',  { url: './image.jpeg', media}).catch((err) => fs.unlinkSync(media))
+     replay(`*✨ ${m.pushname}...!! Posted On My Status ✨*`);
+  }
+  else if (messageType === 'videoMessage') {
+      const media = await downloadMediaMessage(m,'media',{ },{ logger,reuploadRequest: sock.updateMediaMessage})
+      await writeFile('./video.mp4', media)
+      await client.sendMessage(botNumber, 'status@broadcast',  { url: 'video.mp4', media}).catch((err) => fs.unlinkSync(media))
+reply(`*✨ ${m.pushname}...!! Posted On My Status ✨*`);
+  }
+  else {
+      reply(`an error occurred`)
+  }
+
+}
+break;
+case 'pornhub': case 'phub' :{
+client.sendMessage(from, { react: { text: "🪄" , key: m.key }})
+if(!text) return reply(`Example: ${prefix + command} Kress|Well`)
+reply('Please wait')        
+
+inilogo4 = args.join(" ")
+inilogo9 = args.join(" ")
+var logo4 = inilogo4.split('|')[0]
+var logo9 = inilogo9.split('|')[1]
+let anu = await textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
+console.log(anu)
+client.sendMessage(from,{image:{url:anu}, caption:"Here you go!"},{quoted:m})
+}
+break;
 
 
 case 'couple': {
