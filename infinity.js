@@ -2184,7 +2184,49 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
     client.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `infinitytrt.mp3`,},{quoted: m,});
   }
   break;
-
+/*case 'gdrive': {
+                if (!args[0]) return reply(`Enter the Google Drive link`)
+        XeonStickWait()
+        const fg = require('api-dylux')
+        try {
+        let res = await fg.GDriveDl(args[0])
+         await replygcxeon(`
+≡ *Google Drive DL*
+▢ *Nama:* ${res.fileName}
+▢ *Size:* ${res.fileSize}
+▢ *Type:* ${res.mimetype}`)
+        XeonBotInc.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+   } catch {
+        replygcxeon('Error: Check link or try another link') 
+  }
+}
+break;*/
+case "xnxxdl": {
+     
+        if (!m.isGroup) return reply ('Group command')
+        if (!text) return reply(`Enter Url`)
+        if (!text.includes('xnxx.com')) return reply(`Enter an xnxx link`)
+        reply('Please wait')
+        const fg = require('api-dylux')
+            let xn = await fg.xnxxdl(text)
+client.sendMessage(m.chat, { caption: `≡  *XNXX DL*
+        
+▢ *📌Title*: ${xn.result.title}
+▢ *⌚Duration:* ${xn.result.duration}
+▢ *🎞️Quality:* ${xn.result.quality}`, video: {url: xn.result.files.high} }, { quoted: m })
+}
+break;
+case 'xnxxsearch': {
+        
+        if (!m.isGroup) return reply('Group command')
+        if (!text) return replygcxeon(`Enter Query`)
+        reply('Please wait')
+        const fg = require('api-dylux')
+        let res = await fg.xnxxSearch(text)
+            let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
+              if (res.status) reply(ff)
+              }
+              break;
 
         default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
