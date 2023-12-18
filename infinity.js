@@ -376,6 +376,7 @@ if (antilink === 'TRUE' && antilinkall === 'TRUE' && body.includes('http') && !O
 *┃➥Toimg*
 *┃➥Smeme*
 *┃➥Tourl*
+*┃➥Gdrive*
 *┃➥Google*
 *┃➥Quotely*
 *┃➥Movie*
