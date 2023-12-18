@@ -1316,15 +1316,15 @@ case "alive": {
 break;
 
 //group commands
-            case 'owner': case 'creator': {
+           case 'owner': case 'creator': {
                 let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
                     + 'VERSION:3.0\n' 
-                    + 'N:;Kresswell.;;;'
+                    + 'N:;Muiruri.;;;'
                     + 'FN:Kresswell.\n' // full name
                     + 'ORG:Infinity Hackers;\n' // the organization of the contact
-                    + 'TEL;type=CELL;type=VOICE;waid=254798242085;+2547982042085\n' // WhatsApp ID + phone number
+                    + 'TEL;type=CELL;type=VOICE;waid=254798242085:+254 798-2420-85\n' // WhatsApp ID + phone number
                     + 'END:VCARD'
-                client.sendMessage(m.chat, { contacts: { displayName: 'Kresswell.', contacts: [{ vcard }] } }, { quoted: m })
+                client.sendMessage(m.chat, { contacts: { displayName: '𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟.', contacts: [{ vcard }] } }, { quoted: m })
             }
             break;
             case 'q': case 'quoted': {
@@ -1720,7 +1720,33 @@ client.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m
                                         break;
 
           case "sc": case "script": case "scbot":
-           m.reply("Find my source code from my github repository \n\n https://github.com/EscaliBud/InfinityAI");
+           let scmess= `
+               ╭─❒ SCRIPT
+│◦➛Owner : Kresswell
+│◦➺Co-Owner : Spider953
+│∞ *INFINITY HACKERS KENYA*
+└──────[ GITHUB ]──────❒
+  │◦➛Script Link :
+  │◦➛https://github.com/EscaliBud/InfinityAI
+  │◦➛Telegram Channel: 
+  │◦➛https://InfinityHackersKE.t.me 
+  └──────────────────❒`;
+client.sendMessage(m.chat, {
+                        text: mcheks,
+                        contextInfo: {
+                            externalAdReply: {
+                                showAdAttribution: true,
+                                title: `INFINITY-AI`,
+                                body: `INFINITY HACKERS KENYA ◇.`,
+                                thumbnail: fs.readFileSync('./infinity.jpg'),
+                                sourceUrl: `https://InfinityHackersKE.t.me/`,
+                                mediaType: 1,
+                                renderLargerThumbnail: true
+                            }
+                        }
+                    }, {
+                        quoted: m
+                    })
           break;
 case "checks":
 let mcheks= `*⌜ Checks Menu ⌟*
@@ -2235,7 +2261,7 @@ case 'xnxxsearch': {
               break;
 case 'mediafire':
 if (args.length < 1) return reply('Where is the link? ')
-if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
+if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply('error occured')
 if (Number(filesize) >= 30000) return reply(`*Nama :* ${res[0].nama}
 *Ukuran :* ${res[0].size}
 *Link :* ${res[0].link}
