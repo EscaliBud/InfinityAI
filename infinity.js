@@ -2188,7 +2188,7 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
   break;
 case 'gdrive': {
                 if (!args[0]) return reply(`Enter the Google Drive link`)
-        reply ('please wait..'
+        reply ('please wait..')
         const fg = require('api-dylux')
         try {
         let res = await fg.GDriveDl(args[0])
