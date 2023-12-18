@@ -2234,7 +2234,7 @@ case 'xnxxsearch': {
               }
               break;
 case 'mediafire':
-if (args.length < 1) return reply('Where's the link? ')
+if (args.length < 1) return reply('Where is the link? ')
 if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
 if (Number(filesize) >= 30000) return reply(`*Nama :* ${res[0].nama}
 *Ukuran :* ${res[0].size}
