@@ -2329,7 +2329,7 @@ await client.sendMessage(m.chat, {
     audio: { url: urlYt }, 
     mimetype: 'audio/mpeg', 
     fileName: `${infoYt.videoDetails.title}.mp3`,
-    caption: 'InfinityAI`
+    caption: 'InfinityAI'
   }, {quoted: m})
 }
 break;
