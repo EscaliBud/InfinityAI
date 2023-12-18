@@ -1321,7 +1321,7 @@ break;
                     + 'VERSION:3.0\n' 
                     + 'N:;Muiruri.;;;'
                     + 'FN:Kresswell.\n' // full name
-                    + 'ORG:Infinity Hackers;\n' // the organization of the contact
+                    + 'ORG:𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟;\n' // the organization of the contact
                     + 'TEL;type=CELL;type=VOICE;waid=254798242085:+254 798-2420-85\n' // WhatsApp ID + phone number
                     + 'END:VCARD'
                 client.sendMessage(m.chat, { contacts: { displayName: '𓄂ᴋ͟ʀ͟ᴇͥ͟sͣ͟sͫ͟ᴡ͟ᴇ͟ʟ͟ʟ͟.', contacts: [{ vcard }] } }, { quoted: m })
@@ -1732,7 +1732,7 @@ client.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m
   │◦➛https://InfinityHackersKE.t.me 
   └──────────────────❒`;
 client.sendMessage(m.chat, {
-                        text: mcheks,
+                        text: scmess,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
