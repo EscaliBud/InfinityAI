@@ -2214,7 +2214,10 @@ case "xnxxdl": {
             let xn = await fg.xnxxdl(text)
 client.sendMessage(m.chat, { caption: `≡  *XNXX DL*
         
-*_By InfinityAI-*`, video: {url: xn.result.files.high} }, { quoted: m })
+▢ *📌Title*: ${xn.title}
+▢ *⌚Duration:* ${xn.duration}
+▢ *🎞️Quality:* ${xn.quality}
+`, video: {url: xn.url_dl} }, { quoted: m })
 }
 break;
 case 'xnxxsearch': {
