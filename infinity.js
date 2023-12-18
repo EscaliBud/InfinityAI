@@ -2308,7 +2308,7 @@ break;*/
                 }
             }
             break;
-case songg': {
+case 'songg': {
 if (!text) return reply(`Example : ${prefix + command} believer`)
     const ytdl = require('ytdl-secktor')
     let urlYt = text;
