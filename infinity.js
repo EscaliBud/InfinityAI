@@ -13,6 +13,8 @@ const chalk = require("chalk");
 const OpenAI = require("openai");
 const os = require('os');
 const google =require('google-it');
+const { mediafireDl } = require('./lib/mediafire.js');
+const googleImage = require('g-i-s');
 const Genius = require("genius-lyrics"); 
 let { TelegraPh, UploadFileUgu, webp2mp4File } = require('./lib/uploader');
 let setting = require("./key.json");
@@ -2231,6 +2233,39 @@ case 'xnxxsearch': {
               if (res.status) reply(ff)
               }
               break;
+case 'mediafire':
+if (args.length < 1) return reply('Where's the link? ')
+if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
+if (Number(filesize) >= 30000) return reply(`*Nama :* ${res[0].nama}
+*Ukuran :* ${res[0].size}
+*Link :* ${res[0].link}
+
+_Maaf size melebihi batas maksimal, Silahkan klik link diatas_`)
+reply('Please wait...')
+teks = args.join(' ')
+res = await mediafireDl(teks)
+result = `*Nama :* ${res[0].nama}
+*Ukuran :* ${res[0].size}
+
+_File sedang dikirim, Silahkan tunggu beberapa menit_`
+reply(result)
+sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
+break;
+case 'gimg':
+case 'googleimage':
+if (args.length < 1) return reply('Apa Yang Mau Dicari?')
+reply('Please wait..')
+teks = args.join(' ')
+res = await googleImage(teks, google)
+function google(error, result){
+if (error){ return reply('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemukan_')}
+else {
+var gugIm = result
+var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
+sendFileFromUrl(random, image, {quoted: mek, caption: `*Hasil Pencarian Dari :* ${teks}`})
+}
+}
+break;
 
         default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
