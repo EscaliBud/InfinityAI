@@ -35,7 +35,7 @@
 
 ◇ Fork and Star this repo <br>
 ◇ After scanning, Upload your creds.json file to the InfinityAI folder in your forked repo.<br>
-◇ Edit the owner number in infinity.js and place your own number<br>
+◇ Edit the owner number in index.js and place your own number<br>
 ◇ Edit the heroku button so that it heads to your github-username/InfinityAI repository once clicked.<br>
 ◇ Now deploy it to heroku and enjoy.<br>
 
