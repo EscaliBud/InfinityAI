@@ -2308,6 +2308,31 @@ break;*/
                 }
             }
             break;
+case songg': {
+if (!text) return reply(`Example : ${prefix + command} believer`)
+    const ytdl = require('ytdl-secktor')
+    let urlYt = text;
+    if(m.quoted){ text=m.quoted.text; }
+
+    if (!urlYt.startsWith("http")) 
+    {
+        let yts = require("secktor-pack");
+        let search = await yts(text);
+        let anu = search.videos[0];
+        urlYt = anu.url; 
+    }
+    let infoYt = await ytdl.getInfo(urlYt);
+    if (infoYt.videoDetails.lengthSeconds >= 1200) return reply(`*Found Your Song, But it was too lengthy, Try Different Name*`);
+    let titleYt = infoYt.videoDetails.title;   
+reply(`_Downloading ${infoYt.videoDetails.title}?_`);
+await client.sendMessage(m.chat, { 
+    audio: { url: urlYt }, 
+    mimetype: 'audio/mpeg', 
+    fileName: `${infoYt.videoDetails.title}.mp3`,
+    caption: 'InfinityAI`
+  }, {quoted: m})
+}
+break;
 
         default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
