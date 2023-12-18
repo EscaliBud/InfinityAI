@@ -2186,23 +2186,23 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
     client.sendMessage(m.chat,{audio: {url: texttospeechurl,},mimetype: "audio/mpeg",fileName: `infinitytrt.mp3`,},{quoted: m,});
   }
   break;
-/*case 'gdrive': {
+case 'gdrive': {
                 if (!args[0]) return reply(`Enter the Google Drive link`)
-        XeonStickWait()
+        reply ('please wait..'
         const fg = require('api-dylux')
         try {
         let res = await fg.GDriveDl(args[0])
-         await replygcxeon(`
+         await reply(`
 ≡ *Google Drive DL*
 ▢ *Nama:* ${res.fileName}
 ▢ *Size:* ${res.fileSize}
 ▢ *Type:* ${res.mimetype}`)
-        XeonBotInc.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+        client.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
    } catch {
-        replygcxeon('Error: Check link or try another link') 
+        reply('Error: Check link or try another link') 
   }
 }
-break;*/
+break;
 case "xnxxdl": {
      
         if (!m.isGroup) return reply ('Group command')
