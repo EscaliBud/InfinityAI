@@ -36,6 +36,8 @@
      "chalk": "^4.1.2", 
     "api-dylux": "^1.4.4",
          "child-process": "^1.0.2", 
+                       "secktor-pack": "latest",
+                       "ytdl-secktor": "latest",
      "os": "^0.1.2", 
      "genius-lyrics": "^4.4.3", 
     "g-i-s": "^2.1.6",
