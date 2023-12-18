@@ -2275,7 +2275,7 @@ result = `*Nama :* ${res[0].nama}
 
 _File sedang dikirim, Silahkan tunggu beberapa menit_`
 reply(result)
-sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
+client.sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
 break;
 case 'gimg':
 case 'googleimage':
@@ -2288,7 +2288,7 @@ if (error){ return reply('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemu
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-sendFileFromUrl(random, image, {quoted: mek, caption: `*Hasil Pencarian Dari :* ${teks}`})
+client.sendFileFromUrl(random, image, {quoted: mek, caption: `*Hasil Pencarian Dari :* ${teks}`})
 }
 }
 break;
