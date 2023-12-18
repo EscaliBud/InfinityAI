@@ -2259,7 +2259,7 @@ case 'xnxxsearch': {
               if (res.status) reply(ff)
               }
               break;
-case 'mediafire':
+/*case 'mediafire':
 if (args.length < 1) return reply('Where is the link? ')
 if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply('error occured')
 if (Number(filesize) >= 30000) return reply(`*Nama :* ${res[0].nama}
@@ -2291,7 +2291,7 @@ var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
 client.sendFileFromUrl(random, image, {quoted: mek, caption: `*Hasil Pencarian Dari :* ${teks}`})
 }
 }
-break;
+break;*/
             case 'kuismath': case 'math': {
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let { genMath, modes } = require('./src/math')
