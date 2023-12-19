@@ -1603,7 +1603,7 @@ break;
                 let kresswelli = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
-                let respon = `
+                respon = `
 Speed ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
 💻Server Info
