@@ -239,6 +239,109 @@ infinity(client, m, chatUpdate, store);
     return (withoutContact ? "" : v.name) || v.subject || v.verifiedName || PhoneNumber("+" + jid.replace("@s.whatsapp.net", "")).getNumber("international");
   };
 
+//welcome\\
+memb = metadata.participants.length
+ihkWlcm = await getBuffer(ppuser)
+ihkLft = await getBuffer(ppuser)
+                if (anu.action == 'add') {
+                const xeonbuffer = await getBuffer(ppuser)
+                let ihkName = num
+                const xtime = moment.tz('Africa/Nairobi').format('HH:mm:ss')
+                    const xdate = moment.tz('Africa/Nairobi').format('DD/MM/YYYY')
+                    const xmembers = metadata.participants.length
+                ihkbody = `┌─❖
+│「 𝗛𝗶 👋 」
+└┬❖ 「  @${ihkName.split("@")[0]}  」
+   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
+   │✑  ${metadata.subject}
+   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │✑ ${xmembers}th
+   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
+   │✑ ${xtime} ${xdate}
+   └───────────────┈ ⳹`
+client.sendMessage(anu.id,
+ { text: ihkbody,
+ contextInfo:{
+ mentionedJid:[num],
+ "externalAdReply": {"showAdAttribution": true,
+ "containsAutoReply": true,
+ "title": `INFINITY-AI`,
+"body": `Ni God Manzee`,
+ "previewType": "PHOTO",
+"thumbnailUrl": ``,
+"thumbnail": fs.readFileSync('./infinity.jpg'),
+"sourceUrl": `https://t.me/InfinityHackersKE/`}}})
+                } else if (anu.action == 'remove') {
+                        const xeonbuffer = await getBuffer(ppuser)
+                    const ihketime = moment.tz('Africa/Nairobi').format('HH:mm:ss')
+                        const ihkedate = moment.tz('Africa/Nairobi').format('DD/MM/YYYY')
+                        let ihkName = num
+                    const xohmembers = metadata.participants.length
+                    ihkbody = `┌─❖
+│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
+└┬❖ 「 @${ihkName.split("@")[0]}  」
+   │✑  𝗟𝗲𝗳𝘁 
+   │✑ ${metadata.subject}
+   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │✑ ${xohmembers}th
+   │✑  𝗧𝗶𝗺𝗲 : 
+   │✑  ${ihketime} ${ihkedate}
+   └───────────────┈ ⳹`
+client.sendMessage(anu.id,
+ { text: ihkbody,
+ contextInfo:{
+ mentionedJid:[num],
+ "externalAdReply": {"showAdAttribution": true,
+ "containsAutoReply": true,
+ "title": ` INFINITY-AI `,
+"body": `Ni God Manzee`,
+ "previewType": "PHOTO",
+"thumbnailUrl": ``,
+"thumbnail": fs.readFileSync('./infinity.jpg'),
+"sourceUrl": `https://InfinityHackersKE.t.me/`}}})
+} else if (anu.action == 'promote') {
+const xeonbuffer = await getBuffer(ppuser)
+const xeontime = moment.tz('Africa/Nairobi').format('HH:mm:ss')
+const xeondate = moment.tz('Africa/Nairobi').format('DD/MM/YYYY')
+let xeonName = num
+xeonbody = ` 𝗖𝗼𝗻𝗴𝗿𝗮𝘁𝘀🎉 @${xeonName.split("@")[0]}, you have been *promoted* to *admin* 🥳`
+   client.sendMessage(anu.id,
+ { text: xeonbody,
+ contextInfo:{
+ mentionedJid:[num],
+ "externalAdReply": {"showAdAttribution": true,
+ "containsAutoReply": true,
+ "title": ` INFINITY-AI `,
+"body": `Ni God Manzee`,
+ "previewType": "PHOTO",
+"thumbnailUrl": ``,
+"thumbnail": fs.readFileSync('./infinity.jpg'),
+"sourceUrl": `https://t.me/InfinityHackersKE/`}}})
+} else if (anu.action == 'demote') {
+const xeonbuffer = await getBuffer(ppuser)
+const xeontime = moment.tz('Africa/Nairobi').format('HH:mm:ss')
+const xeondate = moment.tz('Africa/Nairobi').format('DD/MM/YYYY')
+let xeonName = num
+xeonbody = `𝗢𝗼𝗽𝘀‼️ @${xeonName.split("@")[0]}, you have been *demoted* from *admin* 😬`
+client.sendMessage(anu.id,
+ { text: xeonbody,
+ contextInfo:{
+ mentionedJid:[num],
+ "externalAdReply": {"showAdAttribution": true,
+ "containsAutoReply": true,
+ "title": ` INFINITY-AI `,
+"body": `Ni God Manzee `,
+ "previewType": "PHOTO",
+"thumbnailUrl": ``,
+"thumbnail": fs.readFileSync('./infinity.jpg'),
+"sourceUrl": `https://t.me/InfinityHackersKE/`}}})
+}
+}
+} catch (err) {
+console.log(err)
+}
+})
+
   client.public = true;
 
   client.serializeM = (m) => smsg(client, m, store);
