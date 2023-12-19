@@ -15,7 +15,7 @@ const {
   fetchLatestWaWebVersion
 } = require("@whiskeysockets/baileys");
 const pino = require("pino");
-
+const moment = require('moment-timezone');
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/kressexif'); 
