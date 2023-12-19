@@ -336,7 +336,6 @@ client.sendMessage(anu.id,
 "thumbnail": fs.readFileSync('./infinity.jpg'),
 "sourceUrl": `https://t.me/InfinityHackersKE/`}}})
 }
-}
 } catch (err) {
 console.log(err)
 }
