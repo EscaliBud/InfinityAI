@@ -239,6 +239,7 @@ infinity(client, m, chatUpdate, store);
     return (withoutContact ? "" : v.name) || v.subject || v.verifiedName || PhoneNumber("+" + jid.replace("@s.whatsapp.net", "")).getNumber("international");
   };
 
+/*
 //welcome\\
 memb = metadata.participants.length
 ihkWlcm = await getBuffer(ppuser)
@@ -340,7 +341,7 @@ client.sendMessage(anu.id,
 //console.log(err)
 //}
 })
-
+*/
   client.public = true;
 
   client.serializeM = (m) => smsg(client, m, store);
