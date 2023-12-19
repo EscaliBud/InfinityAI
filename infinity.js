@@ -762,7 +762,8 @@ case 'play':
                 })
                 .pipe(fs.createWriteStream(`./${randomName}`));
             console.log("Audio downloading ->", urlYt);
-            // reply("Downloading.. This may take upto 5 min!");
+             
+reply(`_Downloading ${infoYt.videoDetails.title}?_`);
             await new Promise((resolve, reject) => {
                 stream.on("error", reject);
                 stream.on("finish", resolve);
@@ -2264,7 +2265,7 @@ case 'xnxxsearch': {
 case 'mediafire':
 if (args.length < 1) return reply('Where is the link? ')
 if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply('error occured')
-if (Number(filesize) >= 30000) return reply(`*Nama :* ${res[0].nama}
+if (Number(size) >= 30000) return reply(`*Nama :* ${res[0].nama}
 *Ukuran :* ${res[0].size}
 *Link :* ${res[0].link}
 
