@@ -1,6 +1,6 @@
 const sessionName = "infinityAI";
 const donet = "https://github.com/EscaliBud";
-const owner = process.env.OWNER || '254798242085'; // This will send a notification once the bot reconnects
+const dev = process.env.OWNER || '254798242085'; // This will send a notification once the bot reconnects
 const {
   default: infinityConnect,
   useMultiFileAuthState,
