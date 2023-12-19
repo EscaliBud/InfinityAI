@@ -1603,7 +1603,7 @@ break;
                 let kresswelli = speed() - timestamp
                 neww = performance.now()
                 oldd = performance.now()
-                respon = `
+                let respon = `
 Speed ${kresswelli.toFixed(4)} _Seconds_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
 💻Server Info
@@ -1614,7 +1614,7 @@ ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.
 
 ${cpus[0] ? `_Total CPU Usage_
 ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
-'}
+';
 client.sendMessage(m.chat, {
                         text: respon,
                         contextInfo: {
@@ -1623,7 +1623,7 @@ client.sendMessage(m.chat, {
                                 title: `INFINITY-AI`,
                                 body: `Ni God Manzee!! ◇.`,
                                 thumbnail: fs.readFileSync('./infinity.jpg'),
-                                sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
+                                sourceUrl: `https://InfinityHackersKE.t.me`,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                             }
