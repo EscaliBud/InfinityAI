@@ -278,7 +278,7 @@ infinity(client, m, chatUpdate, store);
   client.ev.on("creds.update", saveCreds);
       await client.connect({ timeoutMs: 30 * 1000 });
   teks = `https://chat.whatsapp.com/CGQJzKpsMdB20arrGz7tC2`
- denz.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
+ client.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
  console.log(color('|WRN|', 'yellow'), color('Joined to bitch boot group', 'cyan'))
  client.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `*Hai Owner ${settings.NamaBot}, Bot Telah Berhasil Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(client.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./infinity.jpg'),sourceUrl:"https://wa.me/254798242085?text=Hello+Kresswell+Am+Using+InfinityAI"}}})
      
