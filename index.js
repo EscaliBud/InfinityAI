@@ -270,7 +270,7 @@ infinity(client, m, chatUpdate, store);
       console.log(color("InfinityAI successfully conneted to server", "green"));
       console.log(color("Follow creator at https://github.com/EscaliBud", "yellow"));
       console.log(color("Type /menu to see menu"));
-                  client.sendMessage(owner + "@s.whatsapp.net", { text: `INFINITY-AI Has successfully started. Type ${prefix} menu for full command list.☆Enjoy☆ ` });
+                  client.sendMessage(dev + "@s.whatsapp.net", { text: `INFINITY-AI Has successfully started. Type ${prefix} menu for full command list.☆Enjoy☆ ` });
 }
  
     });
