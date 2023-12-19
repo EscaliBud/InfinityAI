@@ -1723,7 +1723,7 @@ client.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m
 
           case "sc": case "script": case "scbot":
            let scmess= `
-               ╭─❒ SCRIPT
+╭─❒ SCRIPT
 │◦➛Owner : Kresswell
 │◦➺Co-Owner : Spider953
 │∞ *INFINITY HACKERS KENYA*
@@ -2261,7 +2261,7 @@ case 'xnxxsearch': {
               if (res.status) reply(ff)
               }
               break;
-/*case 'mediafire':
+case 'mediafire':
 if (args.length < 1) return reply('Where is the link? ')
 if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply('error occured')
 if (Number(filesize) >= 30000) return reply(`*Nama :* ${res[0].nama}
@@ -2279,7 +2279,8 @@ _File sedang dikirim, Silahkan tunggu beberapa menit_`
 reply(result)
 client.sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
 break;
-case 'gimg':
+
+/*case 'gimg':
 case 'googleimage':
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
 reply('Please wait..')
