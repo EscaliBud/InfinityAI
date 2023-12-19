@@ -1,6 +1,6 @@
 const sessionName = "infinityAI";
 const donet = "https://github.com/EscaliBud";
-const owner = ["254798242085"]; // This will send a notification once the bot reconnects
+const owner = process.env.OWNER || '254798242085'; // This will send a notification once the bot reconnects
 const {
   default: infinityConnect,
   useMultiFileAuthState,
@@ -270,7 +270,7 @@ infinity(client, m, chatUpdate, store);
       console.log(color("InfinityAI successfully conneted to server", "green"));
       console.log(color("Follow creator at https://github.com/EscaliBud", "yellow"));
       console.log(color("Type /menu to see menu"));
-            client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n\n InfinityAI :)\n${donet}`});
+                  client.sendMessage(owner + "@s.whatsapp.net", { text: `INFINITY-AI Has successfully started. Type ${prefix} menu for full command list.☆Enjoy☆ ` });
 }
  
     });
