@@ -1806,13 +1806,13 @@ case 'soulmate':  {
 
   
   if (!m.isGroup) return reply('Use this command in a group');
-  client.sendMessage(from, { react: { text: "🗿", key: m.key } });
+  client.sendMessage(from, { react: { text: "🥳", key: m.key } });
 
   let member = participants.map(u => u.id);
   let me = m.sender;
   let jodoh = member[Math.floor(Math.random() * member.length)];
 
-  let message = `👫 Be my Soulmate. Even nature accepts us...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
+  let message = `👫 Be my Soulmate...\n@${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`;
   client.sendMessage(m.chat, { text: message, mentions: [me, jodoh] }, { quoted: m });
 }
 break;
@@ -2144,7 +2144,6 @@ case "tts":  case "texttospeech":  case "say": case "speak":{
   }
   break;
 case 'gdrive': {
-client.sendMessage(from, { react: { text: "⌛" , key: m.key }})
                 if (!args[0]) return reply(`Enter the Google Drive link`)
         reply ('please wait..')
         const fg = require('api-dylux')
@@ -2162,7 +2161,7 @@ client.sendMessage(from, { react: { text: "⌛" , key: m.key }})
 }
 break;
 case "xnxxdl": {
-     client.sendMessage(from, { react: { text: "🔞" , key: m.key }})
+     
         if (!m.isGroup) return reply ('Group command')
         if (!text) return reply(`Enter Url`)
         if (!text.includes('xnxx.com')) return reply(`Enter an xnxx link`)
@@ -2178,7 +2177,7 @@ client.sendMessage(m.chat, { caption: `≡  *XNXX DL*
 }
 break;
 case 'xnxxsearch': {
-       client.sendMessage(from, { react: { text: "🔞" , key: m.key }}) 
+       
         if (!m.isGroup) return reply('Group command')
         if (!text) return reply(`Enter Query`)
         reply('Please wait')
