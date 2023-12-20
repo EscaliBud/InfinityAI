@@ -2266,37 +2266,7 @@ await client.sendMessage(m.chat, {
   }, {quoted: m})
 }
 break;
-case 'bing':{
-client.sendMessage(from, { react: { text: "😂" , key: m.key }})
-let  c =[
-"`I`",
-"`IN`",
-"`INF`",
-"`INFI`",
-"`INFIN`",
-"`INFINI`",
-"`INFINIT`",
-"`INFINITY`",
-"`INFINITY-`",
-"`INFINITY-A`",
-"`INFINITY-AI`",
-"`INFINITY-AI  LOADING MENU......`",
-"`PLEASE WAIT......`",
-"`SUCCESSFULLY LINKED TO INFINITYLABS`",
-"`HERE IS YOUR MENU!! ××Enjoy××`",
-]
-let msg =await client.sendMessage(a)
-   let j=0
-  while (j<1){
-      for (let i=0;i < c.length; i++){
-           await sleep(1100)
-           await client.sendMessage({key: msg.key, text: b[i]}, {},` 'edit')
-i++
-}
-j++
-}
-}
-break;
+
 
         default: {
           if (isCmd2 && budy.toLowerCase() != undefined) {
