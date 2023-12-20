@@ -416,7 +416,7 @@ client.sendMessage(m.chat, {
                                 title: `INFINITY-AI`,
                                 body: `Ni God Manzee!! ◇.`,
                                 thumbnail: fs.readFileSync('./infinity.jpg'),
-                                sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
+                                sourceUrl: `https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e`,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                             }
@@ -1745,7 +1745,7 @@ client.sendMessage(m.chat, {
                                 title: `INFINITY-AI`,
                                 body: `INFINITY HACKERS KENYA ◇.`,
                                 thumbnail: fs.readFileSync('./infinity.jpg'),
-                                sourceUrl: `https://InfinityHackersKE.t.me/`,
+                                sourceUrl: `https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e`,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                             }
@@ -1781,7 +1781,7 @@ client.sendMessage(m.chat, {
                                 title: `INFINITY-AI`,
                                 body: `Ni God Manzee!! ◇.`,
                                 thumbnail: fs.readFileSync('./infinity.jpg'),
-                                sourceUrl: `https://github.com/EscaliBud/Gpt-4`,
+                                sourceUrl: `https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e`,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                             }
