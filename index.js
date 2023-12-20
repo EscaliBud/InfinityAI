@@ -379,7 +379,7 @@ client.sendMessage(anu.id,
       console.log(color("InfinityAI successfully conneted to server", "green"));
       console.log(color("Follow creator at https://github.com/EscaliBud", "yellow"));
       console.log(color("Type /menu to see menu"));
-                  client.sendMessage(owner + "@s.whatsapp.net", { text: `INFINITY-AI Has successfully started. Type ${prefix} menu for full command list.☆Enjoy☆ ` });
+                  client.sendMessage(owner + "@s.whatsapp.net", { text: `INFINITY-AI Has successfully started. Join our Channel Below https://whatsapp.com/channel/0029VaByn0u5PO0wZ94WMX2e.☆Enjoy☆ ` });
 }
  
     });
