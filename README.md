@@ -19,9 +19,12 @@
 
 
 ## ```SCAN QR CODE```
-[![SCAN QR](https://repl.it/badge/github/quiec/whatsasena)](http://qrscanner.kresswellke.repl.co/)
+[![SCAN QR](https://repl.it/badge/github/quiec/whatsasena)](https://infinityai-pairing.kresswellke.repl.co/)
 
 ## ```HEROKU DEPLOYMENT```
+
+
+## Not working 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/EscaliBud/InfinityAI)
 
