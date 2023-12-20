@@ -29,8 +29,8 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/EscaliBud/InfinityAI)
 
 
-
-
+## Connect with me
+<a href="https://wa.me/254798242085"><img src="https://img.shields.io/badge/Contact Kresswell-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 
 ## Instruction!!
