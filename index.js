@@ -21,7 +21,7 @@ const fs = require("fs");
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/kressexif'); 
 
 const axios = require("axios");
-const { isUrl, generateMessageTag } = require('./lib/myfunc')
+const { isUrl, generateMessageTag } = require('./lib/myfunc');
 const chalk = require("chalk");
 const figlet = require("figlet");
 const _ = require("lodash");
