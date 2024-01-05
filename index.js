@@ -350,16 +350,7 @@ client.sendFile = async(jid, PATH, fileName, quoted = {}, options = {}) => {
      client.parseMention = async(text) => { 
          return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net') 
      }
- client.sendVideoAsSticker = async (jid, path, quoted, options = {}) => { 
-         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0); 
-         //let buffer 
-         if (options && (options.packname || options.author)) { 
-             buffer = await writeExifVid(buff, options) 
-         } else { 
-             buffer = await videoToWebp(buff); 
-         } 
-
-         await client.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted }); 
+ 
 await client.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync("./session.json",JSON.stringify(client.base64EncodedAuthInfo(), null, "\t"));
  teks = `https://chat.whatsapp.com/HBMYYnZgBO4243XkL0ROW2`
